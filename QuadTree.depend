@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1525475720 source:c:\users\damir\desktop\quadtree\main.cpp
+	<iostream>
+	<stdexcept>
+	<random>
+	<time.h>
+	<fstream>
+	<ctime>
+	<string>
+	<sstream>
+
+1525470268 
+
+1525472120 source:/home/mrtheamir/Desktop/QuadTree/main.cpp
+	<iostream>
+	<stdexcept>
+	<random>
+	<time.h>
+	<fstream>
+	<ctime>
+	<string>
+	<sstream>
+
