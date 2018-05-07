@@ -7,7 +7,7 @@
 #include <string>
 #include <sstream>
 
-double DEPTH = 1;
+int DEPTH = 6;
 int PERCENTAGE = 10;
 
 
@@ -21,14 +21,13 @@ struct Node{
     Point topLeft;
     Point botRight;
     bool occupied = false;
+    int depth;
     Node* topLeftTree = nullptr;
     Node* topRightTree = nullptr;
     Node* botLeftTree = nullptr;
     Node* botRightTree = nullptr;
 
-    Node(Point topLeft, Point botRight, bool occupied = false) : topLeft(topLeft), botRight(botRight), occupied(occupied) {
-
-    }
+    Node(Point topLeft, Point botRight, int depth, bool occupied = false) : topLeft(topLeft), botRight(botRight), occupied(occupied), depth(depth) {}
 
     ~Node(){
         delete topLeftTree;
@@ -53,7 +52,7 @@ class QuadTree{
 
     public:
     QuadTree(Point topLeft, Point botRight) : topLeft(topLeft), botRight(botRight){
-        root = new Node(topLeft, botRight);
+        root = new Node(topLeft, botRight, 0);
     }
 
     QuadTree(int matrix[], int width, int height);
@@ -64,14 +63,15 @@ class QuadTree{
 
     void insertPoint(Point point);
     bool isOccupied(Point point);
+    int getDepth(Point point);
     int countNodes();
 };
 
 QuadTree::QuadTree(int matrix[], int width, int height) : topLeft(0, 0), botRight(width, height){
-    root = new Node(topLeft, botRight);
+    root = new Node(topLeft, botRight, 0);
     for(int i{}; i<width; i++){
         for (int j{}; j<height; j++){
-            if(matrix[i*width + j]){
+            if(matrix[j*width + i]){
                 insertPoint(Point(i,j));
             }
         }
@@ -82,13 +82,13 @@ void QuadTree::insertPoint(Point point){
     if(point.x < topLeft.x || point.x > botRight.x || point.y < topLeft.y || point.y > botRight.y)
         throw std::range_error("Out of bounds");
     Node* current = root;
-    do{
+    while(current->depth != DEPTH){
         //std::cout << current->topLeft.x << " " << current->topLeft.y << " " << current->botRight.x << " " << current->botRight.y << std::endl;
         if(!current -> topLeftTree){
-            current -> topLeftTree  = new Node(current -> topLeft,                                                                                        Point((current -> topLeft.x + current -> botRight.x)/2, (current -> topLeft.y + current -> botRight.y)/2));
-            current -> topRightTree = new Node(Point((current -> topLeft.x + current -> botRight.x)/2, current -> topLeft.y),                             Point(current -> botRight.x, (current -> topLeft.y + current -> botRight.y)/2));
-            current -> botLeftTree  = new Node(Point(current -> topLeft.x, (current -> topLeft.y + current -> botRight.y)/2),                             Point((current -> topLeft.x + current -> botRight.x)/2, current -> botRight.y));
-            current -> botRightTree = new Node(Point((current -> topLeft.x + current -> botRight.x)/2, (current -> topLeft.y + current -> botRight.y)/2), current -> botRight);
+            current -> topLeftTree  = new Node(current -> topLeft,                                                                                        Point((current -> topLeft.x + current -> botRight.x)/2, (current -> topLeft.y + current -> botRight.y)/2), current -> depth +1);
+            current -> topRightTree = new Node(Point((current -> topLeft.x + current -> botRight.x)/2, current -> topLeft.y),                             Point(current -> botRight.x, (current -> topLeft.y + current -> botRight.y)/2), current -> depth +1);
+            current -> botLeftTree  = new Node(Point(current -> topLeft.x, (current -> topLeft.y + current -> botRight.y)/2),                             Point((current -> topLeft.x + current -> botRight.x)/2, current -> botRight.y), current -> depth +1);
+            current -> botRightTree = new Node(Point((current -> topLeft.x + current -> botRight.x)/2, (current -> topLeft.y + current -> botRight.y)/2), current -> botRight, current -> depth +1);
         }
 
         if(point.x < (current -> topLeft.x + current -> botRight.x)/2 && point.y < (current -> topLeft.y + current -> botRight.y)/2){
@@ -103,7 +103,7 @@ void QuadTree::insertPoint(Point point){
         else{
             current = current -> botRightTree;
         }
-    }while(current -> botRight.x - current -> topLeft.x > DEPTH && current -> botRight.y - current -> topLeft.y > DEPTH);
+    }
     current -> occupied = true;
 }
 
@@ -128,6 +128,27 @@ bool QuadTree::isOccupied(Point point){
     return current -> occupied;
 }
 
+int QuadTree::getDepth(Point point){
+    if(point.x < topLeft.x || point.x > botRight.x || point.y < topLeft.y || point.y > botRight.y)
+        throw std::range_error("Out of bounds");
+    Node* current = root;
+    while(current -> topLeftTree){
+        if(point.x < (current -> topLeft.x + current -> botRight.x)/2 && point.y < (current -> topLeft.y + current -> botRight.y)/2){
+            current = current -> topLeftTree;
+        }
+        else if(point.x >= (current -> topLeft.x + current -> botRight.x)/2 && point.y < (current -> topLeft.y + current -> botRight.y)/2){
+            current = current -> topRightTree;
+        }
+        else if(point.x < (current -> topLeft.x + current -> botRight.x)/2 && point.y >= (current -> topLeft.y + current -> botRight.y)/2){
+            current = current -> botLeftTree;
+        }
+        else{
+            current = current -> botRightTree;
+        }
+    }
+    return current -> depth;
+}
+
 int QuadTree::countNodes(){
     return root -> Count();
 }
@@ -150,10 +171,24 @@ void generateMatrix(int matrix[], int width, int height){
         int x = SlucajniBroj(0, width-1);
         int y = SlucajniBroj(0, height-1);
         //std::cout << x << " " << y << std::endl;
-        if(!matrix[x*width + y])
-            matrix[x*width + y] = 1;
+        if(!matrix[y*width + x])
+            matrix[y*width + x] = 1;
         else
             i--;
+    }
+}
+
+void loadMatrix(std::string ime, int matrix[], int width, int height){
+    std::ifstream file;
+    file.open(ime);
+    char a;
+    int i = 0;
+    while(!file.eof()){
+        file >> a;
+        if(a != ' '){
+            matrix[i] = a - '0';
+            i++;
+        }
     }
 }
 
@@ -161,7 +196,7 @@ void generateTxt(std::string ime, int matrix[], int width, int height){
     std::ofstream izlaz(ime);
     for(int i{}; i<width; i++){
         for(int j{}; j<height; j++)
-            izlaz << matrix[i*width + j];
+            izlaz << matrix[j*width + i];
         izlaz << std::endl;
     }
 }
@@ -180,14 +215,79 @@ bool compareFiles(std::string prvi, std::string drugi){
     return true;
 }
 
-int main()
+void setDepth(int width, int height, double tolerance){
+    DEPTH = 2;
+    while(width/2. > tolerance || height/2 > tolerance){
+        width/=2;
+        height/=2;
+        DEPTH++;
+    }
+}
+/*
+int main(){
+    srand(time(NULL));
+    int width = 600;
+    int height = 600;
+    setDepth(width, height, 1);
+    for(int j = 0; j<1; j++){
+            int* matrix = new int[width*height]{};
+            loadMatrix("A.txt", matrix, width, height);
+            QuadTree dumir(matrix, width, height);
+            std::stringstream lokacija;
+            lokacija << "Matrica";
+            lokacija << width;
+            lokacija << "x";
+            lokacija << height;
+            lokacija << "x";
+            lokacija << j;
+            lokacija << ".txt";
+            generateTxt(lokacija.str(), matrix, width, height);
+            std::stringstream lokacija2;
+            lokacija2 << "QuadTree";
+            lokacija2 << width;
+            lokacija2 << "x";
+            lokacija2 << height;
+            lokacija2 << "x";
+            lokacija2 << j;
+            lokacija2 << ".txt";
+            std::ofstream ispis(lokacija2.str());
+            for(int i = 0; i < width; i++){
+                for(int j = 0; j<height; j++){
+                    ispis << dumir.isOccupied(Point(i,j));
+                }
+                ispis << std::endl;
+            }
+            std::stringstream lokacija3;
+            lokacija3 << "DepthQuadTree";
+            lokacija3 << width;
+            lokacija3 << "x";
+            lokacija3 << height;
+            lokacija3 << "x";
+            lokacija3 << j;
+            lokacija3 << ".txt";
+            std::ofstream ispis2(lokacija3.str());
+            for(int i = 0; i < width; i++){
+                for(int j = 0; j<height; j++){
+                    ispis2 << dumir.getDepth(Point(i,j));
+                }
+                ispis2 << std::endl;
+            }
+            delete[] matrix;
+            std::cout << compareFiles(lokacija.str(), lokacija2.str()) << std::endl;
+        }
+    return 0;
+}
+*/
+
+int main() //main za generisanje izvještaja i poreðenje matrica
 {
     srand(time(NULL));
-    std::ofstream izvjestaj("izvjestaj.txt");
+    std::ofstream izvjestaj("izvjestajnounite.txt");
     int width = 100;
-    int height = 100;
-    for(int i{}; i<10; i++){
-        for(int j{}; j<50; j++){
+    int height = 500;
+    for(int i{}; i<5; i++){
+        setDepth(width, height, 1);
+        for(int j{}; j<5; j++){
             std::cout << i << " " << j << " ";
             int* matrix = new int[width*height]{};
             generateMatrix(matrix, width, height);
@@ -223,11 +323,27 @@ int main()
                 }
                 ispis << std::endl;
             }
+
+            std::stringstream lokacija3;
+            lokacija3 << "DepthQuadTree";
+            lokacija3 << width;
+            lokacija3 << "x";
+            lokacija3 << height;
+            lokacija3 << "x";
+            lokacija3 << j;
+            lokacija3 << ".txt";
+            std::ofstream ispis2(lokacija3.str());
+            for(int i = 0; i < width; i++){
+                for(int j = 0; j<height; j++){
+                    ispis2 << dumir.getDepth(Point(i,j));
+                }
+                ispis2 << std::endl;
+            }
             delete[] matrix;
             std::cout << compareFiles(lokacija.str(), lokacija2.str()) << std::endl;
         }
         width *= 2;
-        height *= 2;
+        //height *= 2;
     }
     return 0;
 }
