@@ -9,6 +9,7 @@
 
 int DEPTH = 6;
 int PERCENTAGE = 10;
+int TEST = 0;
 
 
 struct Point{
@@ -22,12 +23,13 @@ struct Node{
     Point botRight;
     bool occupied = false;
     int depth;
+    Node* parent = nullptr;
     Node* topLeftTree = nullptr;
     Node* topRightTree = nullptr;
     Node* botLeftTree = nullptr;
     Node* botRightTree = nullptr;
 
-    Node(Point topLeft, Point botRight, int depth, bool occupied = false) : topLeft(topLeft), botRight(botRight), occupied(occupied), depth(depth) {}
+    Node(Node* parent, Point topLeft, Point botRight, int depth, bool occupied = false) : parent(parent), topLeft(topLeft), botRight(botRight), occupied(occupied), depth(depth) {}
 
     ~Node(){
         delete topLeftTree;
@@ -42,7 +44,29 @@ struct Node{
         else
             return 1;
     }
+
+    void Unite();
 };
+
+void Node::Unite(){
+
+    //if(topLeftTree)
+    //    std::cout << "call:" << topLeftTree->occupied << topRightTree->occupied << botLeftTree->occupied << botRightTree->occupied << depth << std::endl;
+    if(topLeftTree && topLeftTree->occupied && topRightTree->occupied && botLeftTree->occupied && botRightTree->occupied){
+        delete topLeftTree;
+        delete topRightTree;
+        delete botLeftTree;
+        delete botRightTree;
+        topLeftTree = nullptr;
+        topRightTree = nullptr;
+        botLeftTree = nullptr;
+        botRightTree = nullptr;
+        occupied = true;
+        if(parent)
+            parent->Unite();
+    }
+
+}
 
 class QuadTree{
     private:
@@ -52,7 +76,7 @@ class QuadTree{
 
     public:
     QuadTree(Point topLeft, Point botRight) : topLeft(topLeft), botRight(botRight){
-        root = new Node(topLeft, botRight, 0);
+        root = new Node(nullptr, topLeft, botRight, 0);
     }
 
     QuadTree(int matrix[], int width, int height);
@@ -68,7 +92,7 @@ class QuadTree{
 };
 
 QuadTree::QuadTree(int matrix[], int width, int height) : topLeft(0, 0), botRight(width, height){
-    root = new Node(topLeft, botRight, 0);
+    root = new Node(nullptr, topLeft, botRight, 0);
     for(int i{}; i<width; i++){
         for (int j{}; j<height; j++){
             if(matrix[j*width + i]){
@@ -82,13 +106,13 @@ void QuadTree::insertPoint(Point point){
     if(point.x < topLeft.x || point.x > botRight.x || point.y < topLeft.y || point.y > botRight.y)
         throw std::range_error("Out of bounds");
     Node* current = root;
-    while(current->depth != DEPTH){
+    while(!current->occupied && current->depth != DEPTH){
         //std::cout << current->topLeft.x << " " << current->topLeft.y << " " << current->botRight.x << " " << current->botRight.y << std::endl;
-        if(!current -> topLeftTree){
-            current -> topLeftTree  = new Node(current -> topLeft,                                                                                        Point((current -> topLeft.x + current -> botRight.x)/2, (current -> topLeft.y + current -> botRight.y)/2), current -> depth +1);
-            current -> topRightTree = new Node(Point((current -> topLeft.x + current -> botRight.x)/2, current -> topLeft.y),                             Point(current -> botRight.x, (current -> topLeft.y + current -> botRight.y)/2), current -> depth +1);
-            current -> botLeftTree  = new Node(Point(current -> topLeft.x, (current -> topLeft.y + current -> botRight.y)/2),                             Point((current -> topLeft.x + current -> botRight.x)/2, current -> botRight.y), current -> depth +1);
-            current -> botRightTree = new Node(Point((current -> topLeft.x + current -> botRight.x)/2, (current -> topLeft.y + current -> botRight.y)/2), current -> botRight, current -> depth +1);
+        if(!current -> occupied && !current -> topLeftTree){
+            current -> topLeftTree  = new Node(current, current -> topLeft,                                                                                        Point((current -> topLeft.x + current -> botRight.x)/2, (current -> topLeft.y + current -> botRight.y)/2), current -> depth +1);
+            current -> topRightTree = new Node(current, Point((current -> topLeft.x + current -> botRight.x)/2, current -> topLeft.y),                             Point(current -> botRight.x, (current -> topLeft.y + current -> botRight.y)/2), current -> depth +1);
+            current -> botLeftTree  = new Node(current, Point(current -> topLeft.x, (current -> topLeft.y + current -> botRight.y)/2),                             Point((current -> topLeft.x + current -> botRight.x)/2, current -> botRight.y), current -> depth +1);
+            current -> botRightTree = new Node(current, Point((current -> topLeft.x + current -> botRight.x)/2, (current -> topLeft.y + current -> botRight.y)/2), current -> botRight, current -> depth +1);
         }
 
         if(point.x < (current -> topLeft.x + current -> botRight.x)/2 && point.y < (current -> topLeft.y + current -> botRight.y)/2){
@@ -100,11 +124,17 @@ void QuadTree::insertPoint(Point point){
         else if(point.x < (current -> topLeft.x + current -> botRight.x)/2 && point.y >= (current -> topLeft.y + current -> botRight.y)/2){
             current = current -> botLeftTree;
         }
-        else{
+        else if(point.x >= (current -> topLeft.x + current -> botRight.x)/2 && point.y >= (current -> topLeft.y + current -> botRight.y)/2)
+        {
             current = current -> botRightTree;
+        }
+        else{
+            throw std::range_error("Invalid division");
         }
     }
     current -> occupied = true;
+    if(current -> parent)
+        current -> parent -> Unite();
 }
 
 bool QuadTree::isOccupied(Point point){
@@ -175,6 +205,12 @@ void generateMatrix(int matrix[], int width, int height){
             matrix[y*width + x] = 1;
         else
             i--;
+    }
+}
+
+void generateFullMatrix(int matrix[], int width, int height){
+    for(int i{}; i<width*height; i++){
+            matrix[i] = 1;
     }
 }
 
@@ -282,16 +318,16 @@ int main(){
 int main() //main za generisanje izvještaja i poreðenje matrica
 {
     srand(time(NULL));
-    std::ofstream izvjestaj("izvjestajnounite.txt");
+    std::ofstream izvjestaj("izvjestajyesunite.txt");
     int width = 100;
-    int height = 500;
-    for(int i{}; i<5; i++){
-        setDepth(width, height, 1);
+    int height = 100;
+    for(int i{}; i<7; i++){
+        //setDepth(width, height, 1);
         for(int j{}; j<5; j++){
             std::cout << i << " " << j << " ";
             int* matrix = new int[width*height]{};
-            generateMatrix(matrix, width, height);
-
+            //generateMatrix(matrix, width, height);
+            generateFullMatrix(matrix, width, height);
             clock_t vrijeme1 = clock();
             QuadTree dumir(matrix, width, height);
             clock_t vrijeme2 = clock();
