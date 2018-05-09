@@ -9,7 +9,6 @@
 
 int DEPTH = 6;
 int PERCENTAGE = 10;
-int TEST = 0;
 
 
 struct Point{
@@ -259,69 +258,78 @@ void setDepth(int width, int height, double tolerance){
         DEPTH++;
     }
 }
-/*
+
 int main(){
     srand(time(NULL));
-    int width = 600;
-    int height = 600;
-    setDepth(width, height, 1);
-    for(int j = 0; j<1; j++){
+    int width = 100;
+    int height = 100;
+    for(int j = 0; j<6; j++){
+        std::stringstream lokacija;
+        lokacija << "reports/Izvjestaj";
+        lokacija << width;
+        lokacija << "x";
+        lokacija << height;
+        lokacija << ".txt";
+        std::ofstream izvjestaj(lokacija.str());
+        int timer = 0;
+        int noder = 0;
+        for(int i = 0; i<50; i++){
             int* matrix = new int[width*height]{};
-            loadMatrix("A.txt", matrix, width, height);
+            generateMatrix(matrix, width, height);
+            clock_t vrijeme1 = clock();
             QuadTree dumir(matrix, width, height);
-            std::stringstream lokacija;
-            lokacija << "Matrica";
-            lokacija << width;
-            lokacija << "x";
-            lokacija << height;
-            lokacija << "x";
-            lokacija << j;
-            lokacija << ".txt";
-            generateTxt(lokacija.str(), matrix, width, height);
-            std::stringstream lokacija2;
-            lokacija2 << "QuadTree";
-            lokacija2 << width;
-            lokacija2 << "x";
-            lokacija2 << height;
-            lokacija2 << "x";
-            lokacija2 << j;
-            lokacija2 << ".txt";
-            std::ofstream ispis(lokacija2.str());
-            for(int i = 0; i < width; i++){
-                for(int j = 0; j<height; j++){
-                    ispis << dumir.isOccupied(Point(i,j));
-                }
-                ispis << std::endl;
-            }
-            std::stringstream lokacija3;
-            lokacija3 << "DepthQuadTree";
-            lokacija3 << width;
-            lokacija3 << "x";
-            lokacija3 << height;
-            lokacija3 << "x";
-            lokacija3 << j;
-            lokacija3 << ".txt";
-            std::ofstream ispis2(lokacija3.str());
-            for(int i = 0; i < width; i++){
-                for(int j = 0; j<height; j++){
-                    ispis2 << dumir.getDepth(Point(i,j));
-                }
-                ispis2 << std::endl;
-            }
+            clock_t vrijeme2 = clock();
+            int nodes = dumir.countNodes();
+            izvjestaj << j << ". "<< width << " " << height << " " << (vrijeme2 - vrijeme1) / (CLOCKS_PER_SEC / 1000) << " ms. " << nodes << " nodes" << std::endl;
+            timer += (vrijeme2 - vrijeme1) / (CLOCKS_PER_SEC / 1000);
+            noder += nodes;
             delete[] matrix;
-            std::cout << compareFiles(lokacija.str(), lokacija2.str()) << std::endl;
         }
+        izvjestaj << timer << std::endl;
+        izvjestaj << noder;
+        height *= 2;
+        width *= 2;
+    }
+
+    width = 100;
+    height = 100;
+    for(int j = 0; j<10; j++){
+        std::stringstream lokacija;
+        lokacija << "reports/Izvjestaj2";
+        lokacija << width;
+        lokacija << "x";
+        lokacija << height;
+        lokacija << ".txt";
+        std::ofstream izvjestaj(lokacija.str());
+        int timer = 0;
+        int noder = 0;
+        for(int i = 0; i<50; i++){
+            int* matrix = new int[width*height]{};
+            generateMatrix(matrix, width, height);
+            clock_t vrijeme1 = clock();
+            QuadTree dumir(matrix, width, height);
+            clock_t vrijeme2 = clock();
+            int nodes = dumir.countNodes();
+            izvjestaj << j << ". "<< width << " " << height << " " << (vrijeme2 - vrijeme1) / (CLOCKS_PER_SEC / 1000) << " ms. " << nodes << " nodes" << std::endl;
+            timer += (vrijeme2 - vrijeme1) / (CLOCKS_PER_SEC / 1000);
+            noder += nodes;
+            delete[] matrix;
+        }
+        izvjestaj << timer << std::endl;
+        izvjestaj << noder;
+        width *= 2;
+    }
     return 0;
 }
-*/
 
+/*
 int main() //main za generisanje izvještaja i poreðenje matrica
 {
     srand(time(NULL));
-    std::ofstream izvjestaj("izvjestajyesunite.txt");
-    int width = 100;
+    std::ofstream izvjestaj("izvjestajehlimanayes.txt");
+    int width = 6400;
     int height = 100;
-    for(int i{}; i<7; i++){
+    for(int i{}; i<3; i++){
         //setDepth(width, height, 1);
         for(int j{}; j<5; j++){
             std::cout << i << " " << j << " ";
@@ -383,5 +391,5 @@ int main() //main za generisanje izvještaja i poreðenje matrica
     }
     return 0;
 }
-
+*/
 
