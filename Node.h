@@ -9,7 +9,6 @@ struct Node{
     Point botRight;
     bool occupied = false;
     int depth;
-    Position position;
 
     Node* parent = nullptr;
     Node* topLeftTree = nullptr;
@@ -17,7 +16,7 @@ struct Node{
     Node* botLeftTree = nullptr;
     Node* botRightTree = nullptr;
 
-    Node(Node* parent, Point topLeft, Point botRight, int depth, Position position,bool occupied = false) : parent(parent), topLeft(topLeft), botRight(botRight), occupied(occupied), depth(depth), position(position) {}
+    Node(Node* parent, Point topLeft, Point botRight, int depth, bool occupied = false) : parent(parent), topLeft(topLeft), botRight(botRight), occupied(occupied), depth(depth){}
 
     ~Node(){
         delete topLeftTree;
@@ -79,7 +78,7 @@ void Node::SearchChildren(std::vector<Node*> &neighbors, Position a, Position b)
 */
 
 void Node::FindBordering(std::vector<Node*> &neighbors, const Point &_topLeft, const Point &_botRight){
-    if(topLeft == topLeft && botRight == botRight)
+    if(topLeft == _topLeft && botRight == _botRight)
         return;
 
     if(!topLeftTree){
@@ -90,28 +89,28 @@ void Node::FindBordering(std::vector<Node*> &neighbors, const Point &_topLeft, c
     Point topLeftCopy{topLeftTree -> topLeft};
     Point botRightCopy{topLeftTree -> botRight};
 
-    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y){
-        topLeftTree -> FindBordering(neighbors, _topLeft, botRight);
+    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
+        topLeftTree -> FindBordering(neighbors, _topLeft, _botRight);
     }
 
     topLeftCopy = topRightTree -> topLeft;
     botRightCopy = topRightTree -> botRight;
 
-    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y){
-        topRightTree -> FindBordering(neighbors, _topLeft, botRight);
+    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
+        topRightTree -> FindBordering(neighbors, _topLeft, _botRight);
     }
     topLeftCopy = botLeftTree -> topLeft;
     botRightCopy = botLeftTree -> botRight;
 
-    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y){
-        botLeftTree -> FindBordering(neighbors, _topLeft, botRight);
+    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
+        botLeftTree -> FindBordering(neighbors, _topLeft, _botRight);
     }
 
     topLeftCopy = botRightTree -> topLeft;
     botRightCopy = botRightTree -> botRight;
 
-    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y){
-        botRightTree -> FindBordering(neighbors, _topLeft, botRight);
+    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
+        botRightTree -> FindBordering(neighbors, _topLeft, _botRight);
     }
 }
 

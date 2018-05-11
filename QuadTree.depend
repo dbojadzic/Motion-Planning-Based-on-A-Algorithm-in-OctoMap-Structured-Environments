@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1526052053 source:c:\users\damir\desktop\quadtree\main.cpp
+1526064592 source:c:\users\damir\desktop\quadtree\main.cpp
 	<iostream>
 	<stdexcept>
 	<random>
@@ -34,14 +34,14 @@
 	<string>
 	<sstream>
 
-1526063640 c:\users\damir\desktop\quadtree\quadtree.h
+1526064286 c:\users\damir\desktop\quadtree\quadtree.h
 	"Point.h"
 	"Node.h"
 	"Position.h"
 
 1526063697 c:\users\damir\desktop\quadtree\point.h
 
-1526063815 c:\users\damir\desktop\quadtree\node.h
+1526068143 c:\users\damir\desktop\quadtree\node.h
 	"Point.h"
 	"Position.h"
 

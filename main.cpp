@@ -89,6 +89,19 @@ void setDepth(int width, int height, double tolerance){
 }
 
 int main(){
+    QuadTree dumir(Point(0,0), Point(64,64));
+    dumir.InsertPoint(Point(1,1));
+    Node* help{dumir.FindNode(Point(3,3))};
+    std::cout << "Node: (" << help -> topLeft.x << ", " << help -> topLeft.y << ") (" << help -> botRight.x << ", " << help -> botRight.y << ")" << std::endl;
+    std::vector<Node*> neighbors{dumir.FindAdjacent(help)};
+    for(Node* node : neighbors){
+        std::cout << "(" << node -> topLeft.x << ", " << node -> topLeft.y << ") (" << node -> botRight.x << ", " << node -> botRight.y << ")" << std::endl;
+    }
+}
+
+
+/*
+int main(){
     srand(time(NULL));
     int width = 100;
     int height = 100;
@@ -150,7 +163,7 @@ int main(){
     }
     return 0;
 }
-
+*/
 /*
 int main() //main za generisanje izvještaja i poreðenje matrica
 {

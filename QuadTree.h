@@ -15,7 +15,7 @@ class QuadTree{
 
     public:
     QuadTree(Point topLeft, Point botRight) : topLeft(topLeft), botRight(botRight){
-        root = new Node(nullptr, topLeft, botRight, 0, {true, true});
+        root = new Node(nullptr, topLeft, botRight, 0);
     }
 
     QuadTree(int matrix[], int width, int height);
@@ -24,35 +24,36 @@ class QuadTree{
         delete root;
     }
 
-    void insertPoint(Point point);
-    bool isOccupied(Point point);
-    int getDepth(Point point);
-    int countNodes();
-    std::vector<Node*> findAdjacent(Node* node);
+    void InsertPoint(Point point);
+    bool IsOccupied(Point point);
+    Node* FindNode(Point point);
+    int GetDepth(Point point);
+    int CountNodes();
+    std::vector<Node*> FindAdjacent(Node* node);
 };
 
 QuadTree::QuadTree(int matrix[], int width, int height) : topLeft(0, 0), botRight(width, height){
-    root = new Node(nullptr, topLeft, botRight, 0, {true, true});
+    root = new Node(nullptr, topLeft, botRight, 0);
     for(int i{}; i<width; i++){
         for (int j{}; j<height; j++){
             if(matrix[j*width + i]){
-                insertPoint(Point(i,j));
+                InsertPoint(Point(i,j));
             }
         }
     }
 }
 
-void QuadTree::insertPoint(Point point){
+void QuadTree::InsertPoint(Point point){
     if(point.x < topLeft.x || point.x > botRight.x || point.y < topLeft.y || point.y > botRight.y)
         throw std::range_error("Out of bounds");
     Node* current = root;
     while(!current->occupied && current->depth != DEPTH){
         //std::cout << current->topLeft.x << " " << current->topLeft.y << " " << current->botRight.x << " " << current->botRight.y << std::endl;
         if(!current -> occupied && !current -> topLeftTree){
-            current -> topLeftTree  = new Node(current, current -> topLeft,                                                                                        Point((current -> topLeft.x + current -> botRight.x)/2, (current -> topLeft.y + current -> botRight.y)/2), current -> depth +1, {true, true});
-            current -> topRightTree = new Node(current, Point((current -> topLeft.x + current -> botRight.x)/2, current -> topLeft.y),                             Point(current -> botRight.x, (current -> topLeft.y + current -> botRight.y)/2), current -> depth +1, {true, false});
-            current -> botLeftTree  = new Node(current, Point(current -> topLeft.x, (current -> topLeft.y + current -> botRight.y)/2),                             Point((current -> topLeft.x + current -> botRight.x)/2, current -> botRight.y), current -> depth +1, {false, true});
-            current -> botRightTree = new Node(current, Point((current -> topLeft.x + current -> botRight.x)/2, (current -> topLeft.y + current -> botRight.y)/2), current -> botRight, current -> depth +1, {false, false});
+            current -> topLeftTree  = new Node(current, current -> topLeft,                                                                                        Point((current -> topLeft.x + current -> botRight.x)/2, (current -> topLeft.y + current -> botRight.y)/2), current -> depth +1);
+            current -> topRightTree = new Node(current, Point((current -> topLeft.x + current -> botRight.x)/2, current -> topLeft.y),                             Point(current -> botRight.x, (current -> topLeft.y + current -> botRight.y)/2), current -> depth +1);
+            current -> botLeftTree  = new Node(current, Point(current -> topLeft.x, (current -> topLeft.y + current -> botRight.y)/2),                             Point((current -> topLeft.x + current -> botRight.x)/2, current -> botRight.y), current -> depth +1);
+            current -> botRightTree = new Node(current, Point((current -> topLeft.x + current -> botRight.x)/2, (current -> topLeft.y + current -> botRight.y)/2), current -> botRight, current -> depth +1);
         }
 
         if(point.x < (current -> topLeft.x + current -> botRight.x)/2 && point.y < (current -> topLeft.y + current -> botRight.y)/2){
@@ -77,7 +78,7 @@ void QuadTree::insertPoint(Point point){
         current -> parent -> Unite();
 }
 
-bool QuadTree::isOccupied(Point point){
+bool QuadTree::IsOccupied(Point point){
     if(point.x < topLeft.x || point.x > botRight.x || point.y < topLeft.y || point.y > botRight.y)
         throw std::range_error("Out of bounds");
     Node* current = root;
@@ -98,7 +99,28 @@ bool QuadTree::isOccupied(Point point){
     return current -> occupied;
 }
 
-int QuadTree::getDepth(Point point){
+Node* QuadTree::FindNode(Point point){
+    if(point.x < topLeft.x || point.x > botRight.x || point.y < topLeft.y || point.y > botRight.y)
+        throw std::range_error("Out of bounds");
+    Node* current = root;
+    while(current -> topLeftTree){
+        if(point.x < (current -> topLeft.x + current -> botRight.x)/2 && point.y < (current -> topLeft.y + current -> botRight.y)/2){
+            current = current -> topLeftTree;
+        }
+        else if(point.x >= (current -> topLeft.x + current -> botRight.x)/2 && point.y < (current -> topLeft.y + current -> botRight.y)/2){
+            current = current -> topRightTree;
+        }
+        else if(point.x < (current -> topLeft.x + current -> botRight.x)/2 && point.y >= (current -> topLeft.y + current -> botRight.y)/2){
+            current = current -> botLeftTree;
+        }
+        else{
+            current = current -> botRightTree;
+        }
+    }
+    return current;
+}
+
+int QuadTree::GetDepth(Point point){
     if(point.x < topLeft.x || point.x > botRight.x || point.y < topLeft.y || point.y > botRight.y)
         throw std::range_error("Out of bounds");
     Node* current = root;
@@ -119,11 +141,11 @@ int QuadTree::getDepth(Point point){
     return current -> depth;
 }
 
-int QuadTree::countNodes(){
+int QuadTree::CountNodes(){
     return root -> Count();
 }
 
-std::vector<Node*> QuadTree::findAdjacent(Node* node){
+std::vector<Node*> QuadTree::FindAdjacent(Node* node){
     std::vector<Node*> adjecent;
     root -> FindBordering(adjecent, node -> topLeft, node -> botRight);
     return adjecent;
