@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1525661702 source:c:\users\damir\desktop\quadtree\main.cpp
+1526052053 source:c:\users\damir\desktop\quadtree\main.cpp
 	<iostream>
 	<stdexcept>
 	<random>
@@ -8,6 +8,9 @@
 	<ctime>
 	<string>
 	<sstream>
+	<vector>
+	<queue>
+	"QuadTree.h"
 
 1525470268 
 
@@ -30,4 +33,17 @@
 	<ctime>
 	<string>
 	<sstream>
+
+1526063640 c:\users\damir\desktop\quadtree\quadtree.h
+	"Point.h"
+	"Node.h"
+	"Position.h"
+
+1526063697 c:\users\damir\desktop\quadtree\point.h
+
+1526063815 c:\users\damir\desktop\quadtree\node.h
+	"Point.h"
+	"Position.h"
+
+1526063796 c:\users\damir\desktop\quadtree\position.h
 
