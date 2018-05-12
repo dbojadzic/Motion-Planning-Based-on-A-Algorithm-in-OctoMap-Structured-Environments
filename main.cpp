@@ -89,14 +89,51 @@ void setDepth(int width, int height, double tolerance){
 }
 
 int main(){
-    QuadTree dumir(Point(0,0), Point(64,64));
-    dumir.InsertPoint(Point(1,1));
-    Node* help{dumir.FindNode(Point(3,3))};
-    std::cout << "Node: (" << help -> topLeft.x << ", " << help -> topLeft.y << ") (" << help -> botRight.x << ", " << help -> botRight.y << ")" << std::endl;
-    std::vector<Node*> neighbors{dumir.FindAdjacent(help)};
-    for(Node* node : neighbors){
-        std::cout << "(" << node -> topLeft.x << ", " << node -> topLeft.y << ") (" << node -> botRight.x << ", " << node -> botRight.y << ")" << std::endl;
+    srand(time(NULL));
+    int width = 600;
+    int height = 600;
+    int* matrix = new int[width*height]{};
+    loadMatrix("A.txt", matrix, width, height);
+    QuadTree dumir(matrix, width, height);
+
+    for(int i{}; i<50; i++){
+        int timer = 0;
+
+        std::stringstream lokacija;
+        lokacija << "reports3/Izvjestaj";
+        lokacija << i;
+        lokacija << ".csv";
+        std::ofstream izvjestaj(lokacija.str());
+
+        izvjestaj << "time" << std::endl;
+        for(int j{}; j<100; j++){
+            int x = SlucajniBroj(0, width-1);
+            int y = SlucajniBroj(0, height-1);
+            Node* node{dumir.FindNode(Point(x,y))};
+            clock_t vrijeme1 = clock();
+            std::vector<Node*> neighbors{dumir.FindAdjacent(node)};
+            clock_t vrijeme2 = clock();
+            izvjestaj << (vrijeme2 - vrijeme1) / (CLOCKS_PER_SEC / 1000) << std::endl;
+            timer += (vrijeme2 - vrijeme1) / (CLOCKS_PER_SEC / 1000);
+
+            std::stringstream lokacija2;
+            lokacija2 << "reports4/Izvjestaj";
+            lokacija2 << i;
+            lokacija2 << "x";
+            lokacija2 << j;
+            lokacija2 << ".csv";
+            std::ofstream izvjestaj2(lokacija2.str());
+
+            lokacija2 << "Top Left, Bot Right" << std::endl;
+                izvjestaj2 << "(" << node -> topLeft.x << " " << node -> topLeft.y << "), (" << node -> botRight.x << " " << node -> botRight.y << ")" << std::endl;
+
+            for(Node* help : neighbors){
+                izvjestaj2 << "(" << help -> topLeft.x << " " << help -> topLeft.y << "), (" << help -> botRight.x << " " << help -> botRight.y << ")" << std::endl;
+            }
+        }
+        izvjestaj << timer << std::endl;
     }
+    return 0;
 }
 
 
