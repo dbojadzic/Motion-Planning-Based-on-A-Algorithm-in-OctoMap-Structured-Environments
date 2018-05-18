@@ -4,6 +4,7 @@
 #include "Point.h"
 #include "Node.h"
 #include "Position.h"
+#include "Comparator.h"
 
 int DEPTH = 6;
 
@@ -30,6 +31,12 @@ class QuadTree{
     int GetDepth(Point point);
     int CountNodes();
     std::vector<Node*> FindAdjacent(Node* node);
+    void SetHeuristics(Node* referent);
+    std::vector<Node*> Astar(Node* start, Node* finish);
+    std::vector<Node*> FindAdjacentNoOccupied(Node* node);
+    void WriteAll(){
+        root -> WriteAll();
+    }
 };
 
 QuadTree::QuadTree(int matrix[], int width, int height) : topLeft(0, 0), botRight(width, height){
@@ -149,39 +156,46 @@ std::vector<Node*> QuadTree::FindAdjacent(Node* node){
     std::vector<Node*> adjecent;
     root -> FindBordering(adjecent, node -> topLeft, node -> botRight);
     return adjecent;
+}
 
-    /*
+std::vector<Node*> QuadTree::FindAdjacentNoOccupied(Node* node){
     std::vector<Node*> adjecent;
-    if(!node -> parent){
-        return adjecent;
-    }
-    std::vector<Position> positions;
-    Node* current{node};
-    while(current -> parent){
-        positions.push_back(current -> position);
-        current = current -> parent;
-    }
-    current = node;
-    bool top{}, bot{}, left{}, right{};
-    for(int i{}; i<positions.size(); i++){
-        current = current -> parent;
-        std::queue<Node*> nodes;
-        if(current -> topLeftTree -> position != positions[i]){
-            current -> topLeftTree -> SearchChildren(adjecent, positions[i], !current -> topLeftTree -> position);
-        }
-        if(current -> topRightTree -> position != positions[i]){
-            current -> topRightTree -> SearchChildren(adjecent, positions[i], !current -> topRightTree -> position);
-        }
-        if(current -> botLeftTree -> position != positions[i]){
-            current -> botLeftTree -> SearchChildren(adjecent, positions[i], !current -> botLeftTree -> position);
-        }
-        if(current -> botRightTree -> position != positions[i]){
-            current -> botRightTree -> SearchChildren(adjecent, positions[i], !current -> botRightTree -> position);
-        }
-
-    }
+    root -> FindBorderingNoOccupied(adjecent, node -> topLeft, node -> botRight);
     return adjecent;
-    */
+}
+
+void QuadTree::SetHeuristics(Node* referent){
+    root -> SetHeuristics(referent);
+}
+
+std::vector<Node*> QuadTree::Astar(Node* start, Node* finish){
+    root -> SetHeuristics(finish);
+    std::priority_queue<Node*, std::vector<Node*>, Comparator> nodes;
+    Node* help{start};
+    nodes.push(help);
+    while(!nodes.empty()){
+        help = nodes.top();
+        nodes.pop();
+        if(help == finish){
+            std::vector<Node*> path;
+            path.push_back(help);
+            while(help -> cameFrom && help != start){
+                std::cout << "(" << help -> topLeft.x << " " << help -> topLeft.y << "), (" << help -> botRight.x << " " << help -> botRight.y << ")" << std::endl;
+                help = help -> cameFrom;
+                path.push_back(help);
+            }
+            return path;
+        }
+        std::vector<Node*> pom{FindAdjacentNoOccupied(help)};
+        for(Node *pomocna : pom){
+            if(pomocna -> cameFrom == help)
+                continue;
+
+            if(pomocna -> SetWeight(help))
+                nodes.push(pomocna);
+        }
+    }
+    return {};
 }
 
 #endif // QUADTREE_H_INCLUDED

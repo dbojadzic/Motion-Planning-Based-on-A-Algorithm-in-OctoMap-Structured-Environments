@@ -89,6 +89,41 @@ void setDepth(int width, int height, double tolerance){
 }
 
 int main(){
+    int width = 64;
+    int height = 64;
+    QuadTree dumir(Point(0,0), Point(width, height));
+    dumir.InsertPoint(Point(3,3));
+    dumir.WriteAll();
+    std::cout << std::endl;
+    /*
+    std::vector<Node*> neighbors(dumir.FindAdjacentNoOccupied(dumir.FindNode(Point(3,3))));
+    for(Node* node : neighbors){
+        std::cout << "(" << node -> topLeft.x << " " << node -> topLeft.y << "), (" << node -> botRight.x << " " << node -> botRight.y << ")" << std::endl;
+    }
+    */
+    std::vector<Node*> cvorovi(dumir.Astar(dumir.FindNode(Point(1, 1)), dumir.FindNode(Point(62, 62))));
+    for(Node* node : cvorovi){
+        std::cout << "(" << node -> topLeft.x << " " << node -> topLeft.y << "), (" << node -> botRight.x << " " << node -> botRight.y << ")" << std::endl;
+    }
+    return 0;
+}
+
+/*
+int main(){
+    int width = 600;
+    int height = 600;
+    int* matrix = new int[width*height]{};
+    loadMatrix("A.txt", matrix, width, height);
+    QuadTree dumir(matrix, width, height);
+    std::vector<Node*> cvorovi(dumir.Astar(dumir.FindNode(Point(1, 550)), dumir.FindNode(Point(550, 1))));
+    for(Node* node : cvorovi){
+        std::cout << "(" << node -> topLeft.x << " " << node -> topLeft.y << "), (" << node -> botRight.x << " " << node -> botRight.y << ")" << std::endl;
+    }
+    return 0;
+}
+*/
+/*
+int main(){
     srand(time(NULL));
     int width = 600;
     int height = 600;
@@ -96,26 +131,22 @@ int main(){
     loadMatrix("A.txt", matrix, width, height);
     QuadTree dumir(matrix, width, height);
 
+
+    std::stringstream lokacija;
+    lokacija << "reports3/Izvjestaj50x1000";
+    lokacija << ".csv";
+    std::ofstream izvjestaj(lokacija.str());
+    izvjestaj << "time" << std::endl;
+    int timer = 0;
     for(int i{}; i<50; i++){
-        int timer = 0;
-
-        std::stringstream lokacija;
-        lokacija << "reports3/Izvjestaj";
-        lokacija << i;
-        lokacija << ".csv";
-        std::ofstream izvjestaj(lokacija.str());
-
-        izvjestaj << "time" << std::endl;
-        for(int j{}; j<100; j++){
+        clock_t vrijeme1 = clock();
+        for(int j{}; j<1000; j++){
             int x = SlucajniBroj(0, width-1);
             int y = SlucajniBroj(0, height-1);
             Node* node{dumir.FindNode(Point(x,y))};
-            clock_t vrijeme1 = clock();
             std::vector<Node*> neighbors{dumir.FindAdjacent(node)};
-            clock_t vrijeme2 = clock();
-            izvjestaj << (vrijeme2 - vrijeme1) / (CLOCKS_PER_SEC / 1000) << std::endl;
-            timer += (vrijeme2 - vrijeme1) / (CLOCKS_PER_SEC / 1000);
-
+            //timer += (vrijeme2 - vrijeme1) / (CLOCKS_PER_SEC / 1000);
+            /*
             std::stringstream lokacija2;
             lokacija2 << "reports4/Izvjestaj";
             lokacija2 << i;
@@ -130,12 +161,17 @@ int main(){
             for(Node* help : neighbors){
                 izvjestaj2 << "(" << help -> topLeft.x << " " << help -> topLeft.y << "), (" << help -> botRight.x << " " << help -> botRight.y << ")" << std::endl;
             }
+
         }
-        izvjestaj << timer << std::endl;
+        clock_t vrijeme2 = clock();
+        izvjestaj << (vrijeme2 - vrijeme1) / (CLOCKS_PER_SEC / 1000) << std::endl;
+        timer += (vrijeme2 - vrijeme1) / (CLOCKS_PER_SEC / 1000);
+        //izvjestaj << timer << std::endl;
     }
+    izvjestaj << timer << std::endl;
     return 0;
 }
-
+*/
 
 /*
 int main(){

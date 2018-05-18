@@ -24,7 +24,7 @@
 	<string>
 	<sstream>
 
-1525831363 source:c:\users\mrtheamir\desktop\quadtree\main.cpp
+1526646384 source:c:\users\mrtheamir\desktop\quadtree\main.cpp
 	<iostream>
 	<stdexcept>
 	<random>
@@ -33,6 +33,9 @@
 	<ctime>
 	<string>
 	<sstream>
+	<vector>
+	<queue>
+	"QuadTree.h"
 
 1526064286 c:\users\damir\desktop\quadtree\quadtree.h
 	"Point.h"
@@ -46,4 +49,20 @@
 	"Position.h"
 
 1526063796 c:\users\damir\desktop\quadtree\position.h
+
+1526646424 c:\users\mrtheamir\desktop\quadtree\quadtree.h
+	"Point.h"
+	"Node.h"
+	"Position.h"
+	"Comparator.h"
+
+1526089984 c:\users\mrtheamir\desktop\quadtree\point.h
+
+1526645970 c:\users\mrtheamir\desktop\quadtree\node.h
+	"Point.h"
+	"Position.h"
+
+1526089984 c:\users\mrtheamir\desktop\quadtree\position.h
+
+1526492983 c:\users\mrtheamir\desktop\quadtree\comparator.h
 
