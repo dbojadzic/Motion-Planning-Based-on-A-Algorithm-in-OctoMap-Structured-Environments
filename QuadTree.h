@@ -1,6 +1,8 @@
 #ifndef QUADTREE_H_INCLUDED
 #define QUADTREE_H_INCLUDED
 
+#include <set>
+
 #include "Point.h"
 #include "Node.h"
 #include "Position.h"
@@ -170,16 +172,16 @@ void QuadTree::SetHeuristics(Node* referent){
 
 std::vector<Node*> QuadTree::Astar(Node* start, Node* finish){
     root -> SetHeuristics(finish);
-    std::priority_queue<Node*, std::vector<Node*>, Comparator> nodes;
+    std::set<Node*, Comparator> nodes;
     Node* help{start};
-    nodes.push(help);
+    nodes.insert(help);
     while(!nodes.empty()){
-        help = nodes.top();
-        nodes.pop();
+        help = *nodes.begin();
+        nodes.erase(nodes.begin());
         if(help == finish){
             std::vector<Node*> path;
             path.push_back(help);
-            while(help -> cameFrom && help != start){
+            while(help -> cameFrom){
                 std::cout << "(" << help -> topLeft.x << " " << help -> topLeft.y << "), (" << help -> botRight.x << " " << help -> botRight.y << ")" << std::endl;
                 help = help -> cameFrom;
                 path.push_back(help);
@@ -188,11 +190,16 @@ std::vector<Node*> QuadTree::Astar(Node* start, Node* finish){
         }
         std::vector<Node*> pom{FindAdjacentNoOccupied(help)};
         for(Node *pomocna : pom){
-            if(pomocna -> cameFrom == help)
+            if(pomocna == start)
                 continue;
+            else if(pomocna -> cameFrom == help)
+                continue;
+            if(pomocna -> SetWeight(help)){
+                std::cout << "Node: " << "(" << pomocna -> topLeft.x << " " << pomocna -> topLeft.y << "), (" << pomocna -> botRight.x << " " << pomocna -> botRight.y << ")" << std::endl;
+                std::cout << "Came from: " << "(" << help -> topLeft.x << " " << help -> topLeft.y << "), (" << help -> botRight.x << " " << help -> botRight.y << ")" << std::endl;
 
-            if(pomocna -> SetWeight(help))
-                nodes.push(pomocna);
+                nodes.insert(pomocna);
+            }
         }
     }
     return {};

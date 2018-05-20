@@ -89,9 +89,6 @@ void Node::FindBordering(std::vector<Node*> &neighbors, const Point &_topLeft, c
     if(topLeft == _topLeft && botRight == _botRight)
         return;
 
-    if(occupied)
-        return;
-
     if(!topLeftTree){
         neighbors.push_back(this);
         return;
@@ -129,6 +126,9 @@ void Node::FindBorderingNoOccupied(std::vector<Node*> &neighbors, const Point &_
     if(topLeft == _topLeft && botRight == _botRight)
         return;
 
+    if(occupied)
+        return;
+
     if(!topLeftTree){
         neighbors.push_back(this);
         return;
@@ -138,27 +138,27 @@ void Node::FindBorderingNoOccupied(std::vector<Node*> &neighbors, const Point &_
     Point botRightCopy{topLeftTree -> botRight};
 
     if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
-        topLeftTree -> FindBordering(neighbors, _topLeft, _botRight);
+        topLeftTree -> FindBorderingNoOccupied(neighbors, _topLeft, _botRight);
     }
 
     topLeftCopy = topRightTree -> topLeft;
     botRightCopy = topRightTree -> botRight;
 
     if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
-        topRightTree -> FindBordering(neighbors, _topLeft, _botRight);
+        topRightTree -> FindBorderingNoOccupied(neighbors, _topLeft, _botRight);
     }
     topLeftCopy = botLeftTree -> topLeft;
     botRightCopy = botLeftTree -> botRight;
 
     if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
-        botLeftTree -> FindBordering(neighbors, _topLeft, _botRight);
+        botLeftTree -> FindBorderingNoOccupied(neighbors, _topLeft, _botRight);
     }
 
     topLeftCopy = botRightTree -> topLeft;
     botRightCopy = botRightTree -> botRight;
 
     if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
-        botRightTree -> FindBordering(neighbors, _topLeft, _botRight);
+        botRightTree -> FindBorderingNoOccupied(neighbors, _topLeft, _botRight);
     }
 }
 
@@ -178,7 +178,7 @@ void Node::SetHeuristics(Node* referent){
         double referenty = (referent -> botRight.y + referent -> topLeft.y)/2;
         double currentx = (botRight.x + topLeft.x)/2;
         double currenty = (botRight.y + topLeft.y)/2;
-        heuristics = sqrt(pow(referentx - currentx,2) + pow(referenty - currenty, 2));
+        heuristics = sqrt(pow(referentx - currentx, 2) + pow(referenty - currenty, 2));
     }
 }
 
@@ -187,7 +187,7 @@ bool Node::SetWeight(Node* node){
     double referenty = (node -> botRight.y + node -> topLeft.y)/2;
     double currentx = (botRight.x + topLeft.x)/2;
     double currenty = (botRight.y + topLeft.y)/2;
-    double newweight = heuristics + sqrt(pow(referentx - currentx,2) + pow(referenty - currenty, 2));
+    double newweight = heuristics + sqrt(pow(referentx - currentx, 2) + pow(referenty - currenty, 2));
     if(weight > newweight){
         weight = newweight;
         cameFrom = node;

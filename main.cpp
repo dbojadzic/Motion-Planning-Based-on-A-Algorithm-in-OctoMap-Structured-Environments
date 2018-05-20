@@ -119,6 +119,7 @@ int main(){
     for(Node* node : cvorovi){
         std::cout << "(" << node -> topLeft.x << " " << node -> topLeft.y << "), (" << node -> botRight.x << " " << node -> botRight.y << ")" << std::endl;
     }
+    delete[] matrix;
     return 0;
 }
 */
@@ -169,6 +170,7 @@ int main(){
         //izvjestaj << timer << std::endl;
     }
     izvjestaj << timer << std::endl;
+    delete[] matrix;
     return 0;
 }
 */
