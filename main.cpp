@@ -9,7 +9,7 @@
 #include <vector>
 #include <queue>
 
-#include "QuadTree.h"
+#include "Astar.h"
 
 int PERCENTAGE = 10;
 
@@ -89,22 +89,42 @@ void setDepth(int width, int height, double tolerance){
 }
 
 int main(){
+
+    int width = 600;
+    int height = 600;
+    int* matrix = new int[width*height]{};
+
+    loadMatrix("A.txt", matrix, width, height);
+    QuadTree dumir(matrix, width, height);
+
+    /*
     int width = 64;
     int height = 64;
     QuadTree dumir(Point(0,0), Point(width, height));
     dumir.InsertPoint(Point(3,3));
-    dumir.WriteAll();
-    std::cout << std::endl;
+    dumir.InsertPoint(Point(20,30));
+    dumir.InsertPoint(Point(25,25));
+    dumir.InsertPoint(Point(40,40));
+    */
+    //dumir.WriteAll();
     /*
     std::vector<Node*> neighbors(dumir.FindAdjacentNoOccupied(dumir.FindNode(Point(3,3))));
     for(Node* node : neighbors){
         std::cout << "(" << node -> topLeft.x << " " << node -> topLeft.y << "), (" << node -> botRight.x << " " << node -> botRight.y << ")" << std::endl;
     }
     */
-    std::vector<Node*> cvorovi(dumir.Astar(dumir.FindNode(Point(1, 1)), dumir.FindNode(Point(62, 62))));
+
+    Astar astar(&dumir);
+    std::ofstream ispis("MatlabPath.txt");
+    std::vector<Node*> cvorovi(astar.FindPath(Point(30, 30), Point(550, 30)));
+    std::cout << std::endl << "FINAL PATH: " << std::endl;
     for(Node* node : cvorovi){
         std::cout << "(" << node -> topLeft.x << " " << node -> topLeft.y << "), (" << node -> botRight.x << " " << node -> botRight.y << ")" << std::endl;
+        ispis << "rectangle('Position',[" << node -> WriteMatlab() << "], 'FaceColor',[1 0 0])" << std::endl;
+
     }
+    dumir.WriteAllMatlab("Matlab.txt");
+    delete[] matrix;
     return 0;
 }
 

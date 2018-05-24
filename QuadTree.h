@@ -39,13 +39,38 @@ class QuadTree{
     void WriteAll(){
         root -> WriteAll();
     }
+    void WriteAllMatlab(std::string path){
+        std::ofstream izvjestaj(path);
+        std::queue<Node*> red;
+        red.push(root);
+        while(!red.empty()){
+            Node* help = red.front();
+            red.pop();
+            if(help -> topLeftTree){
+                red.push(help -> topLeftTree);
+                red.push(help -> topRightTree);
+                red.push(help -> botLeftTree);
+                red.push(help -> botRightTree);
+            }
+            else {
+                //rectangle('Position',[1 6 5 8])
+                izvjestaj << "rectangle('Position',[" << help -> WriteMatlab() << "], 'FaceColor',[";
+                if(help -> occupied){
+                    izvjestaj << "0 0 0])" << std::endl;
+                }
+                else {
+                    izvjestaj << "1 1 1])" << std::endl;
+                }
+            }
+        }
+    }
 };
 
 QuadTree::QuadTree(int matrix[], int width, int height) : topLeft(0, 0), botRight(width, height){
     root = new Node(nullptr, topLeft, botRight, 0);
     for(int i{}; i<width; i++){
         for (int j{}; j<height; j++){
-            if(matrix[j*width + i]){
+            if(!matrix[j*width + i]){
                 InsertPoint(Point(i,j));
             }
         }
@@ -168,41 +193,6 @@ std::vector<Node*> QuadTree::FindAdjacentNoOccupied(Node* node){
 
 void QuadTree::SetHeuristics(Node* referent){
     root -> SetHeuristics(referent);
-}
-
-std::vector<Node*> QuadTree::Astar(Node* start, Node* finish){
-    root -> SetHeuristics(finish);
-    std::set<Node*, Comparator> nodes;
-    Node* help{start};
-    nodes.insert(help);
-    while(!nodes.empty()){
-        help = *nodes.begin();
-        nodes.erase(nodes.begin());
-        if(help == finish){
-            std::vector<Node*> path;
-            path.push_back(help);
-            while(help -> cameFrom){
-                std::cout << "(" << help -> topLeft.x << " " << help -> topLeft.y << "), (" << help -> botRight.x << " " << help -> botRight.y << ")" << std::endl;
-                help = help -> cameFrom;
-                path.push_back(help);
-            }
-            return path;
-        }
-        std::vector<Node*> pom{FindAdjacentNoOccupied(help)};
-        for(Node *pomocna : pom){
-            if(pomocna == start)
-                continue;
-            else if(pomocna -> cameFrom == help)
-                continue;
-            if(pomocna -> SetWeight(help)){
-                std::cout << "Node: " << "(" << pomocna -> topLeft.x << " " << pomocna -> topLeft.y << "), (" << pomocna -> botRight.x << " " << pomocna -> botRight.y << ")" << std::endl;
-                std::cout << "Came from: " << "(" << help -> topLeft.x << " " << help -> topLeft.y << "), (" << help -> botRight.x << " " << help -> botRight.y << ")" << std::endl;
-
-                nodes.insert(pomocna);
-            }
-        }
-    }
-    return {};
 }
 
 #endif // QUADTREE_H_INCLUDED

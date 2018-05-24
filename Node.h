@@ -13,6 +13,7 @@ struct Node{
     double heuristics = std::numeric_limits<double>::infinity();
     double weight = std::numeric_limits<double>::infinity();
     Node* cameFrom = nullptr;
+    Node* maybeCameFrom = nullptr;
 
     Node* parent = nullptr;
     Node* topLeftTree = nullptr;
@@ -42,7 +43,9 @@ struct Node{
     void FindBorderingNoOccupied(std::vector<Node*> &neighbors, const Point &_topLeft, const Point &_botRight);
     void SetHeuristics(Node* referent);
     bool SetWeight(Node* node);
+    void Write();
     void WriteAll();
+    std::string WriteMatlab();
 };
 
 void Node::Unite(){
@@ -190,15 +193,23 @@ bool Node::SetWeight(Node* node){
     double newweight = heuristics + sqrt(pow(referentx - currentx, 2) + pow(referenty - currenty, 2));
     if(weight > newweight){
         weight = newweight;
-        cameFrom = node;
+        maybeCameFrom = node;
         return true;
     }
     return false;
 }
 
+void Node::Write(){
+        std::cout << std::endl << "(" << topLeft.x << "," << topLeft.y << "),(" << botRight.x << "," << botRight.y << ")" << " Weight: " << weight;
+        if(cameFrom)
+            std::cout << ", Came From: " << "(" << cameFrom -> topLeft.x << "," << cameFrom -> topLeft.y << "),(" << cameFrom -> botRight.x << "," << cameFrom -> botRight.y << ")" << std::endl;
+         else
+            std::cout << ", Came From Nothing" << std::endl;
+}
+
 void Node::WriteAll(){
     if(!topLeftTree){
-        std::cout << "(" << topLeft.x << "," << topLeft.y << "),(" << botRight.x << "," << botRight.y << ")" << std::endl;
+        Write();
     }
     else{
         topLeftTree -> WriteAll();
@@ -206,6 +217,21 @@ void Node::WriteAll(){
         botLeftTree -> WriteAll();
         botRightTree -> WriteAll();
     }
+}
+
+std::string Node::WriteMatlab(){
+    double x = topLeft.x;
+    double y = -botRight.y;
+    double width = botRight.x - x;
+    std::stringstream help;
+    help << x;
+    help << " ";
+    help << y;
+    help << " ";
+    help << width;
+    help << " ";
+    help << width;
+    return help.str();
 }
 
 #endif // NODE_H_INCLUDED
