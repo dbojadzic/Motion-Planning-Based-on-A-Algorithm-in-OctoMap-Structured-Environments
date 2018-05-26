@@ -10,6 +10,7 @@
 #include <queue>
 
 #include "Astar.h"
+#include "AstarMatrix.h"
 
 int PERCENTAGE = 10;
 
@@ -92,11 +93,14 @@ int main(){
     int width = 600;
     int height = 600;
     int* matrix = new int[width*height]{};
-    loadMatrix("A.txt", matrix, width, height);
+    loadMatrix("A2.txt", matrix, width, height);
     QuadTree dumir(matrix, width, height);
 
     Astar astar(&dumir);
-    astar.CreateFullMatlabPlot("instructions.txt", Point(30, 550), Point(550, 30));
+    astar.CreateFullMatlabPlot("instructions.txt", Point(30, 30), Point(550, 30));
+
+    AstarMatrix astarmatrix(matrix, width, height);
+    astarmatrix.CreateFullMatlabPlot("instructionsmatrix.txt", Point(30, 30), Point(550, 30));
     /*
     std::vector<Node*> adjecent{dumir.FindAdjacent(dumir.FindNode(Point(100, 100)))};
     std::cout << std::endl << std::endl << std::endl;

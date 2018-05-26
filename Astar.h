@@ -4,11 +4,11 @@
 #include "QuadTree.h"
 
 class Astar{
-    private:
+private:
 
     QuadTree* quadtree;
 
-    public:
+public:
 
     Astar(QuadTree* quadtree) : quadtree(quadtree){}
 
