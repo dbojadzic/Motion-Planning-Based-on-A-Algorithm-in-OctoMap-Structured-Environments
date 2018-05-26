@@ -89,41 +89,39 @@ void setDepth(int width, int height, double tolerance){
 }
 
 int main(){
-
     int width = 600;
     int height = 600;
     int* matrix = new int[width*height]{};
-
     loadMatrix("A.txt", matrix, width, height);
     QuadTree dumir(matrix, width, height);
 
-    /*
-    int width = 64;
-    int height = 64;
-    QuadTree dumir(Point(0,0), Point(width, height));
-    dumir.InsertPoint(Point(3,3));
-    dumir.InsertPoint(Point(20,30));
-    dumir.InsertPoint(Point(25,25));
-    dumir.InsertPoint(Point(40,40));
-    */
-    //dumir.WriteAll();
-    /*
-    std::vector<Node*> neighbors(dumir.FindAdjacentNoOccupied(dumir.FindNode(Point(3,3))));
-    for(Node* node : neighbors){
-        std::cout << "(" << node -> topLeft.x << " " << node -> topLeft.y << "), (" << node -> botRight.x << " " << node -> botRight.y << ")" << std::endl;
-    }
-    */
-
     Astar astar(&dumir);
-    std::ofstream ispis("MatlabPath.txt");
-    std::vector<Node*> cvorovi(astar.FindPath(Point(30, 30), Point(550, 30)));
-    std::cout << std::endl << "FINAL PATH: " << std::endl;
-    for(Node* node : cvorovi){
-        std::cout << "(" << node -> topLeft.x << " " << node -> topLeft.y << "), (" << node -> botRight.x << " " << node -> botRight.y << ")" << std::endl;
-        ispis << "rectangle('Position',[" << node -> WriteMatlab() << "], 'FaceColor',[1 0 0])" << std::endl;
-
+    astar.CreateFullMatlabPlot("instructions.txt", Point(30, 550), Point(550, 30));
+    /*
+    std::vector<Node*> adjecent{dumir.FindAdjacent(dumir.FindNode(Point(100, 100)))};
+    std::cout << std::endl << std::endl << std::endl;
+    std::ofstream izvjestaj("neighbors.txt");
+    for(Node* help : adjecent){
+            izvjestaj << "rectangle('Position',[" << help -> WriteMatlab() << "], 'FaceColor',[";
+            if(help -> occupied){
+                izvjestaj << "0 0 1]);" << std::endl;
+            }
+            else {
+                izvjestaj << "1 1 0]);" << std::endl;
+            }
     }
-    dumir.WriteAllMatlab("Matlab.txt");
+    */
+    /*
+    std::ofstream izvjestaj("neighbors.txt");
+    Node* a{dumir.FindNode(Point(500, 400))};
+    Node* b{dumir.FindNode(Point(505, 415))};
+    izvjestaj << "rectangle('Position',[" << a -> WriteMatlab() << "], 'FaceColor',[";
+    izvjestaj << "0 0 1]);" << std::endl;
+    izvjestaj << "rectangle('Position',[" << b -> WriteMatlab() << "], 'FaceColor',[";
+    izvjestaj << "0 0 1]);" << std::endl;
+
+    std::cout << std::endl << std::endl << a -> Overlap(b->topLeft, b->botRight);
+    */
     delete[] matrix;
     return 0;
 }
@@ -152,7 +150,23 @@ int main(){
     loadMatrix("A.txt", matrix, width, height);
     QuadTree dumir(matrix, width, height);
 
-
+        /*
+    int width = 64;
+    int height = 64;
+    QuadTree dumir(Point(0,0), Point(width, height));
+    dumir.InsertPoint(Point(3,3));
+    dumir.InsertPoint(Point(20,30));
+    dumir.InsertPoint(Point(25,25));
+    dumir.InsertPoint(Point(40,40));
+    */
+    //dumir.WriteAll();
+    /*
+    std::vector<Node*> neighbors(dumir.FindAdjacentNoOccupied(dumir.FindNode(Point(3,3))));
+    for(Node* node : neighbors){
+        std::cout << "(" << node -> topLeft.x << " " << node -> topLeft.y << "), (" << node -> botRight.x << " " << node -> botRight.y << ")" << std::endl;
+    }
+    */
+    /*
     std::stringstream lokacija;
     lokacija << "reports3/Izvjestaj50x1000";
     lokacija << ".csv";

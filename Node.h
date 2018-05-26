@@ -37,8 +37,9 @@ struct Node{
             return 1;
     }
 
+    Point GetCenter();
     void Unite();
-    //void SearchChildren(std::vector<Node*> &neighbors, Position a, Position b);
+    bool Overlap(const Point &_topLeft, const Point &_botRight);
     void FindBordering(std::vector<Node*> &neighbors, const Point &_topLeft, const Point &_botRight);
     void FindBorderingNoOccupied(std::vector<Node*> &neighbors, const Point &_topLeft, const Point &_botRight);
     void SetHeuristics(Node* referent);
@@ -48,10 +49,11 @@ struct Node{
     std::string WriteMatlab();
 };
 
-void Node::Unite(){
+Point Node::GetCenter(){
+    return Point((topLeft.x + botRight.x)/2, (topLeft.y + botRight.y)/2);
+}
 
-    //if(topLeftTree)
-    //    std::cout << "call:" << topLeftTree->occupied << topRightTree->occupied << botLeftTree->occupied << botRightTree->occupied << depth << std::endl;
+void Node::Unite(){
     if(topLeftTree && topLeftTree->occupied && topRightTree->occupied && botLeftTree->occupied && botRightTree->occupied){
         delete topLeftTree;
         delete topRightTree;
@@ -67,26 +69,31 @@ void Node::Unite(){
     }
 
 }
-/*
-void Node::SearchChildren(std::vector<Node*> &neighbors, Position a, Position b){
-    if(!topLeftTree){
-        neighbors.push_back(this);
-        return;
-    }
-    if(topLeftTree -> position == a || topLeftTree -> position == b){
-            topLeftTree -> SearchChildren(neighbors, a, b);
-    }
-    if(topRightTree -> position == a || topRightTree -> position == b){
-            topRightTree -> SearchChildren(neighbors, a, b);
-    }
-    if(botLeftTree -> position == a || botLeftTree -> position == b){
-            botLeftTree -> SearchChildren(neighbors, a, b);
-    }
-    if(botRightTree -> position == a || botRightTree -> position == b){
-            botRightTree -> SearchChildren(neighbors, a, b);
-    }
+
+bool Node::Overlap(const Point &_topLeft, const Point &_botRight){
+    Point topLeftCopy{topLeft};
+    Point botRightCopy{botRight};
+    return (topLeftCopy.x <= _topLeft.x
+            && _topLeft.x <= botRightCopy.x
+            && (topLeftCopy.y <= _topLeft.y
+                && _topLeft.y <= botRightCopy.y
+                || topLeftCopy.y <= _botRight.y
+                && _botRight.y <= botRightCopy.y
+                || _topLeft.y <= topLeftCopy.y
+                && botRightCopy.y <= _botRight.y)
+            || topLeftCopy.x <= _botRight.x
+            && _botRight.x <= botRightCopy.x
+            && (topLeftCopy.y <= _botRight.y
+                && _botRight.y <= botRightCopy.y
+                || topLeftCopy.y <= _topLeft.y
+                && _topLeft.y <= botRightCopy.y
+                || _topLeft.y <= topLeftCopy.y
+                && botRightCopy.y <= _botRight.y)
+            || _topLeft.x <= topLeftCopy.x
+            && botRightCopy.x <= _botRight.x
+            && (_topLeft.y == botRightCopy.y
+                || _botRight.y == topLeftCopy.y));
 }
-*/
 
 void Node::FindBordering(std::vector<Node*> &neighbors, const Point &_topLeft, const Point &_botRight){
     if(topLeft == _topLeft && botRight == _botRight)
@@ -97,30 +104,19 @@ void Node::FindBordering(std::vector<Node*> &neighbors, const Point &_topLeft, c
         return;
     }
 
-    Point topLeftCopy{topLeftTree -> topLeft};
-    Point botRightCopy{topLeftTree -> botRight};
-
-    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
+    if(topLeftTree -> Overlap(_topLeft, _botRight)){
         topLeftTree -> FindBordering(neighbors, _topLeft, _botRight);
     }
 
-    topLeftCopy = topRightTree -> topLeft;
-    botRightCopy = topRightTree -> botRight;
-
-    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
+    if(topRightTree -> Overlap(_topLeft, _botRight)){
         topRightTree -> FindBordering(neighbors, _topLeft, _botRight);
     }
-    topLeftCopy = botLeftTree -> topLeft;
-    botRightCopy = botLeftTree -> botRight;
 
-    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
+    if(botLeftTree -> Overlap(_topLeft, _botRight)){
         botLeftTree -> FindBordering(neighbors, _topLeft, _botRight);
     }
 
-    topLeftCopy = botRightTree -> topLeft;
-    botRightCopy = botRightTree -> botRight;
-
-    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
+    if(botRightTree -> Overlap(_topLeft, _botRight)){
         botRightTree -> FindBordering(neighbors, _topLeft, _botRight);
     }
 }
@@ -137,30 +133,19 @@ void Node::FindBorderingNoOccupied(std::vector<Node*> &neighbors, const Point &_
         return;
     }
 
-    Point topLeftCopy{topLeftTree -> topLeft};
-    Point botRightCopy{topLeftTree -> botRight};
-
-    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
+    if(topLeftTree -> Overlap(_topLeft, _botRight)){
         topLeftTree -> FindBorderingNoOccupied(neighbors, _topLeft, _botRight);
     }
 
-    topLeftCopy = topRightTree -> topLeft;
-    botRightCopy = topRightTree -> botRight;
-
-    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
+    if(topRightTree -> Overlap(_topLeft, _botRight)){
         topRightTree -> FindBorderingNoOccupied(neighbors, _topLeft, _botRight);
     }
-    topLeftCopy = botLeftTree -> topLeft;
-    botRightCopy = botLeftTree -> botRight;
 
-    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
+    if(botLeftTree -> Overlap(_topLeft, _botRight)){
         botLeftTree -> FindBorderingNoOccupied(neighbors, _topLeft, _botRight);
     }
 
-    topLeftCopy = botRightTree -> topLeft;
-    botRightCopy = botRightTree -> botRight;
-
-    if(topLeftCopy.x <= _topLeft.x && _topLeft.x <= botRightCopy.x && (topLeftCopy.y <= _topLeft.y && _topLeft.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y) || topLeftCopy.x <= _botRight.x && _botRight.x <= botRightCopy.x && (topLeftCopy.y <= _botRight.y && _botRight.y <= botRightCopy.y || _topLeft.y <= topLeftCopy.y && botRightCopy.y <= _botRight.y)){
+    if(botRightTree -> Overlap(_topLeft, _botRight)){
         botRightTree -> FindBorderingNoOccupied(neighbors, _topLeft, _botRight);
     }
 }
@@ -200,11 +185,11 @@ bool Node::SetWeight(Node* node){
 }
 
 void Node::Write(){
-        std::cout << std::endl << "(" << topLeft.x << "," << topLeft.y << "),(" << botRight.x << "," << botRight.y << ")" << " Weight: " << weight;
+        std::cout << " (" << topLeft.x << "," << topLeft.y << "),(" << botRight.x << "," << botRight.y << ")" << " Weight: " << weight << ", Heuristics: " << heuristics;
         if(cameFrom)
-            std::cout << ", Came From: " << "(" << cameFrom -> topLeft.x << "," << cameFrom -> topLeft.y << "),(" << cameFrom -> botRight.x << "," << cameFrom -> botRight.y << ")" << std::endl;
+            std::cout << ", Came From: " << "(" << cameFrom -> topLeft.x << "," << cameFrom -> topLeft.y << "),(" << cameFrom -> botRight.x << "," << cameFrom -> botRight.y << ")";
          else
-            std::cout << ", Came From Nothing" << std::endl;
+            std::cout << ", Came From Nothing";
 }
 
 void Node::WriteAll(){
@@ -232,6 +217,11 @@ std::string Node::WriteMatlab(){
     help << " ";
     help << width;
     return help.str();
+}
+
+
+double Distance(Node* a, Node* b){
+    return sqrt(pow(b -> GetCenter().x - a -> GetCenter().x, 2) + pow(b -> GetCenter().y - a -> GetCenter().y, 2));
 }
 
 #endif // NODE_H_INCLUDED

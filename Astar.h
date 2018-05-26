@@ -13,11 +13,12 @@ class Astar{
     Astar(QuadTree* quadtree) : quadtree(quadtree){}
 
     std::vector<Node*> FindPath(Point start, Point finish);
-
+    double FindDistance(Point start, Point finish);
+    double FindDistance(std::vector<Node*> nodes, Point start, Point finish);
+    void CreateFullMatlabPlot(std::string path, Point start, Point finish);
 };
 
 std::vector<Node*> Astar::FindPath(Point s, Point f){
-    //int i = 0;
     Node* start{quadtree -> FindNode(s)};
     Node* finish{quadtree -> FindNode(f)};
     quadtree -> SetHeuristics(finish);
@@ -25,13 +26,6 @@ std::vector<Node*> Astar::FindPath(Point s, Point f){
     Node* help{start};
     nodes.insert(help);
     while(!nodes.empty()){
-        /*
-        i++;
-        for(Node* pomocna : nodes){
-            std::cout << i << ": ";
-            pomocna -> Write();
-        }
-        */
         help = *nodes.begin();
         nodes.erase(nodes.begin());
         help -> cameFrom = help -> maybeCameFrom;
@@ -39,7 +33,6 @@ std::vector<Node*> Astar::FindPath(Point s, Point f){
             std::vector<Node*> path;
             path.push_back(help);
             while(help -> cameFrom){
-                help -> Write();
                 help = help -> cameFrom;
                 path.push_back(help);
             }
@@ -51,17 +44,64 @@ std::vector<Node*> Astar::FindPath(Point s, Point f){
                 continue;
             else if(pomocna -> cameFrom)
                 continue;
-
             if(pomocna -> SetWeight(help)){
-                /*
-                std::cout << "Node: " << "(" << pomocna -> topLeft.x << " " << pomocna -> topLeft.y << "), (" << pomocna -> botRight.x << " " << pomocna -> botRight.y << ")" << std::endl;
-                std::cout << "Came from: " << "(" << help -> topLeft.x << " " << help -> topLeft.y << "), (" << help -> botRight.x << " " << help -> botRight.y << ")" << std::endl;
-                */
                 nodes.insert(pomocna);
             }
         }
     }
     return {};
+}
+
+double Astar::FindDistance(Point start, Point finish){
+    double distance{};
+    std::vector<Node*> nodes{FindPath(start, finish)};
+    for(int i{}; i<nodes.size()-1; i++){
+        distance += Distance(nodes[i], nodes[i+1]);
+    }
+    distance += sqrt(pow(nodes[0] -> GetCenter().x - start.x, 2) + pow(nodes[0] -> GetCenter().y - start.y, 2));
+    distance += sqrt(pow(nodes[nodes.size()] -> GetCenter().x - finish.x, 2) + pow(nodes[nodes.size()] -> GetCenter().y - finish.y, 2));
+    return distance;
+}
+
+double Astar::FindDistance(std::vector<Node*> nodes, Point start, Point finish){
+    double distance{};
+    for(int i{}; i<nodes.size()-1; i++){
+        distance += Distance(nodes[i], nodes[i+1]);
+
+    }
+    distance += sqrt(pow(nodes[0] -> GetCenter().x - start.x, 2) + pow(nodes[0] -> GetCenter().y - start.y, 2));
+    distance += sqrt(pow(nodes[nodes.size()-1] -> GetCenter().x - finish.x, 2) + pow(nodes[nodes.size()-1] -> GetCenter().y - finish.y, 2));
+
+    return distance;
+}
+
+void Astar::CreateFullMatlabPlot(std::string path, Point start, Point finish){
+    std::stringstream instructions;
+    instructions << "axis([0 " << quadtree -> GetWidth() << " " <<-1 * quadtree -> GetHeight() << " 0]);" << std::endl;
+    instructions << "title('QuadTree: " << quadtree -> GetWidth() << " x " << quadtree -> GetHeight() << " From: (" << start.x << "," << start.y << ") To: (" << finish.x << "," << finish.y << ")');" << std::endl;
+    instructions << "xlabel('Width: " << quadtree -> GetWidth() << "');" << std::endl;
+    instructions << "ylabel('Height: " << quadtree -> GetHeight() << "');" << std::endl;
+    quadtree -> StreamMapMatlab(instructions);
+    std::vector<Node*> nodes{FindPath(start, finish)};
+    instructions << "X=[";
+    instructions << finish.x << ",";
+    for(Node* node : nodes){
+        instructions << node -> GetCenter().x << ",";
+    }
+    instructions << start.x;
+    instructions << "];" << std::endl;
+    instructions << "Y=[";
+    instructions << -finish.y << ",";
+    for(Node* node : nodes){
+        instructions << node -> GetCenter().y * -1 << ",";
+    }
+    instructions << -start.y;
+    instructions << "];" << std::endl;
+    instructions << "hold on;" << std::endl;
+    instructions << "plot(X,Y,'r');" << std::endl;
+    instructions << "legend('" << FindDistance(nodes, start, finish) << "','Location','southoutside');" << std::endl;
+    std::ofstream write(path);
+    write << instructions.str();
 }
 
 #endif // ASTAR_H_INCLUDED

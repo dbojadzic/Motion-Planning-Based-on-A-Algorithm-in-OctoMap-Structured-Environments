@@ -27,6 +27,8 @@ class QuadTree{
         delete root;
     }
 
+    double GetWidth();
+    double GetHeight();
     void InsertPoint(Point point);
     bool IsOccupied(Point point);
     Node* FindNode(Point point);
@@ -36,34 +38,9 @@ class QuadTree{
     void SetHeuristics(Node* referent);
     std::vector<Node*> Astar(Node* start, Node* finish);
     std::vector<Node*> FindAdjacentNoOccupied(Node* node);
-    void WriteAll(){
-        root -> WriteAll();
-    }
-    void WriteAllMatlab(std::string path){
-        std::ofstream izvjestaj(path);
-        std::queue<Node*> red;
-        red.push(root);
-        while(!red.empty()){
-            Node* help = red.front();
-            red.pop();
-            if(help -> topLeftTree){
-                red.push(help -> topLeftTree);
-                red.push(help -> topRightTree);
-                red.push(help -> botLeftTree);
-                red.push(help -> botRightTree);
-            }
-            else {
-                //rectangle('Position',[1 6 5 8])
-                izvjestaj << "rectangle('Position',[" << help -> WriteMatlab() << "], 'FaceColor',[";
-                if(help -> occupied){
-                    izvjestaj << "0 0 0])" << std::endl;
-                }
-                else {
-                    izvjestaj << "1 1 1])" << std::endl;
-                }
-            }
-        }
-    }
+    void WriteAll();
+    void WriteMapMatlab(std::string path);
+    void StreamMapMatlab(std::stringstream &izvjestaj);
 };
 
 QuadTree::QuadTree(int matrix[], int width, int height) : topLeft(0, 0), botRight(width, height){
@@ -75,6 +52,14 @@ QuadTree::QuadTree(int matrix[], int width, int height) : topLeft(0, 0), botRigh
             }
         }
     }
+}
+
+double QuadTree::GetWidth(){
+    return botRight.x - topLeft.x;
+}
+
+double QuadTree::GetHeight(){
+    return botRight.y - topLeft.y;
 }
 
 void QuadTree::InsertPoint(Point point){
@@ -193,6 +178,59 @@ std::vector<Node*> QuadTree::FindAdjacentNoOccupied(Node* node){
 
 void QuadTree::SetHeuristics(Node* referent){
     root -> SetHeuristics(referent);
+}
+
+void QuadTree::WriteAll(){
+    root -> WriteAll();
+}
+
+void QuadTree::WriteMapMatlab(std::string path){
+    std::ofstream izvjestaj(path);
+    std::queue<Node*> red;
+    red.push(root);
+    while(!red.empty()){
+        Node* help = red.front();
+        red.pop();
+        if(help -> topLeftTree){
+            red.push(help -> topLeftTree);
+            red.push(help -> topRightTree);
+            red.push(help -> botLeftTree);
+            red.push(help -> botRightTree);
+        }
+        else {
+            izvjestaj << "rectangle('Position',[" << help -> WriteMatlab() << "], 'FaceColor',[";
+            if(help -> occupied){
+                izvjestaj << "0 0 0])" << std::endl;
+            }
+            else {
+                izvjestaj << "1 1 1])" << std::endl;
+            }
+        }
+    }
+}
+
+void QuadTree::StreamMapMatlab(std::stringstream &izvjestaj){
+    std::queue<Node*> red;
+    red.push(root);
+    while(!red.empty()){
+        Node* help = red.front();
+        red.pop();
+        if(help -> topLeftTree){
+            red.push(help -> topLeftTree);
+            red.push(help -> topRightTree);
+            red.push(help -> botLeftTree);
+            red.push(help -> botRightTree);
+        }
+        else {
+            izvjestaj << "rectangle('Position',[" << help -> WriteMatlab() << "], 'FaceColor',[";
+            if(help -> occupied){
+                izvjestaj << "0 0 0]);" << std::endl;
+            }
+            else {
+                izvjestaj << "1 1 1]);" << std::endl;
+            }
+        }
+    }
 }
 
 #endif // QUADTREE_H_INCLUDED
