@@ -3,7 +3,7 @@
 
 class Comparator{
     public:
-    bool operator()(Node* a, Node *b){
+    bool operator()(Node* a, Node *b) const {
         return a -> weight < b -> weight;
     }
 };

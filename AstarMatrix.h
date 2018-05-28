@@ -76,7 +76,6 @@ std::vector<Point> AstarMatrix::FindPath(Point start, Point goal){
                     continue;
 
                 Point neighbor(i,j);
-                double tenative_gScore;
                 if(closedSet.count(neighbor))
                     continue;
                 openSet.insert(neighbor);
@@ -87,13 +86,13 @@ std::vector<Point> AstarMatrix::FindPath(Point start, Point goal){
                 if(!gScore.count(neighbor))
                     gScore[neighbor] = std::numeric_limits<double>::infinity();
 
-                tenative_gScore = gScore[current] + dist_between(current, neighbor);
-                if(tenative_gScore >= gScore[neighbor])
+                tentative_gScore = gScore[current] + dist_between(current, neighbor);
+                if(tentative_gScore >= gScore[neighbor])
                     continue;
 
                 cameFrom[neighbor] = current;
-                gScore[neighbor] = tenative_gScore;
-                fScore[neighbor] = tenative_gScore + heuristic_cost_estimate(neighbor, goal);
+                gScore[neighbor] = tentative_gScore;
+                fScore[neighbor] = tentative_gScore + heuristic_cost_estimate(neighbor, goal);
             }
         }
     }
@@ -106,6 +105,7 @@ void AstarMatrix::CreateFullMatlabPlot(std::string path, Point start, Point fini
     instructions << "title('Matrix: " << width << " x " << height << " From: (" << start.x << "," << start.y << ") To: (" << finish.x << "," << finish.y << ")');" << std::endl;
     instructions << "xlabel('Width: " << width << "');" << std::endl;
     instructions << "ylabel('Height: " << height << "');" << std::endl;
+    /*
     for(int i{}; i<width; i++){
         for(int j{}; j<height; j++){
             instructions << "rectangle('Position',[" << i - 0.5 << " " << -j - 0.5 << " 1 1], 'FaceColor',[";
@@ -117,6 +117,7 @@ void AstarMatrix::CreateFullMatlabPlot(std::string path, Point start, Point fini
             }
         }
     }
+    */
     std::vector<Point> points{FindPath(start, finish)};
     instructions << "X=[";
     instructions << finish.x << ",";

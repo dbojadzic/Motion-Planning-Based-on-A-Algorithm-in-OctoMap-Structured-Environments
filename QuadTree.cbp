@@ -38,6 +38,9 @@
 		<Unit filename="AstarMatrix.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="AstarQuadTree.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Comparator.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>

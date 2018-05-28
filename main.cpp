@@ -11,6 +11,7 @@
 
 #include "Astar.h"
 #include "AstarMatrix.h"
+#include "AstarQuadTree.h"
 
 int PERCENTAGE = 10;
 
@@ -90,17 +91,46 @@ void setDepth(int width, int height, double tolerance){
 }
 
 int main(){
-    int width = 600;
-    int height = 600;
+    int width = 3000;
+    int height = 3000;
     int* matrix = new int[width*height]{};
     loadMatrix("A2.txt", matrix, width, height);
     QuadTree dumir(matrix, width, height);
 
-    Astar astar(&dumir);
-    astar.CreateFullMatlabPlot("instructions.txt", Point(30, 30), Point(550, 30));
 
+    Astar astar(&dumir);
+    AstarQuadTree astarquadtree(&dumir);
+
+
+    clock_t vrijeme1 = clock();
+    astar.FindPath(Point(100, 100), Point(2900, 100));
+    clock_t vrijeme2 = clock();
+    std::cout << (vrijeme2 - vrijeme1) / (CLOCKS_PER_SEC / 1000) << std::endl;
+
+    vrijeme1 = clock();
+    astarquadtree.FindPath(Point(100, 100), Point(2900, 100));
+    vrijeme2 = clock();
+    std::cout << (vrijeme2 - vrijeme1) / (CLOCKS_PER_SEC / 1000) << std::endl;
+
+    astarquadtree.CreateFullMatlabPlot("instructionsquadtree.txt", Point(100, 100), Point(2900, 100));
+
+
+
+    /*
+    astar.CreateFullMatlabPlot("instructions.txt", Point(200, 200), Point(2800, 200));
+    std::cout << "Hi" << std::endl;
+    */
+    /*
+    astarquadtree.CreateFullMatlabPlot("instructionsquadtree.txt", Point(200, 200), Point(2800, 200));
+    std::cout << "Hi" << std::endl;
+    */
+    /*
     AstarMatrix astarmatrix(matrix, width, height);
-    astarmatrix.CreateFullMatlabPlot("instructionsmatrix.txt", Point(30, 30), Point(550, 30));
+    astarmatrix.CreateFullMatlabPlot("instructionsmatrix.txt", Point(200, 200), Point(2800, 200));
+    */
+
+
+
     /*
     std::vector<Node*> adjecent{dumir.FindAdjacent(dumir.FindNode(Point(100, 100)))};
     std::cout << std::endl << std::endl << std::endl;
