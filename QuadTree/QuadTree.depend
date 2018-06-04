@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1528078203 source:c:\users\mrtheamir\desktop\quadtree\quadtree\main.cpp
+	<iostream>
+	<stdexcept>
+	<random>
+	<time.h>
+	<fstream>
+	<ctime>
+	<string>
+	<sstream>
+	<vector>
+	<queue>
+	"Astar.h"
+
+1528079251 c:\users\mrtheamir\desktop\quadtree\quadtree\astar.h
+	<set>
+	<map>
+	"Node.h"
+	"QuadTree.h"
+	"Comparator.h"
+
+1527698056 c:\users\mrtheamir\desktop\quadtree\quadtree\node.h
+	"Point.h"
+
+1527697537 c:\users\mrtheamir\desktop\quadtree\quadtree\point.h
+
+1527697793 c:\users\mrtheamir\desktop\quadtree\quadtree\quadtree.h
+
+1528078161 c:\users\mrtheamir\desktop\quadtree\quadtree\comparator.h
+

@@ -1,8 +1,0 @@
-axis([0 1300 -1300 0]);
-title('QuadTree: 1300 x 1300 From: (1,1299) To: (1299,1)');
-xlabel('Width: 1300');
-ylabel('Height: 1300');
-X=[1299,1];
-Y=[-1,-1299];
-hold on;
-plot(X,Y,'r');
