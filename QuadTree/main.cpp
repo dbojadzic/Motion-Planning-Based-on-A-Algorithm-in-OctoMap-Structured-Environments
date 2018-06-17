@@ -1,13 +1,12 @@
 #include <iostream>
 #include <stdexcept>
 #include <random>
-#include <time.h>
 #include <fstream>
-#include <ctime>
 #include <string>
 #include <sstream>
 #include <vector>
 #include <queue>
+#include <chrono>
 
 #include "Astar.h"
 
@@ -47,12 +46,13 @@ void loadMatrix(std::string ime, int matrix[], int width, int height){
     file.open(ime);
     char a;
     int i = 0;
+    file >> a;
     while(!file.eof()){
-        file >> a;
-        if(a != ' '){
+        if(a != ' ' && a != ','){
             matrix[i] = a - '0';
             i++;
         }
+        file >> a;
     }
 }
 
@@ -89,23 +89,52 @@ void setDepth(int width, int height, double tolerance){
 }
 
 int main(){
-    int width = 600;
-    int height = 600;
-    int* matrix = new int[width*height]{};
-    loadMatrix("B1.txt", matrix, width, height);
+    int sizes[] = {100, 200, 400, 500, 600, 1000, 1500, 3000};
+    for (int size : sizes) {
+        int width = size;
+        int height = size;
+        int* matrix = new int[width*height]{};
+
+        std::stringstream path;
+
+        path << "maps/A";
+        path << size;
+        path << ".txt";
+        loadMatrix(path.str(), matrix, width, height);
+        //loadMatrix("maps/map1-3000", matrix, width, height);
+        std::stringstream path2;
+        path2 << "izvjestaj2/A";
+        path2 << size;
+        path2 << ".csv";
+        std::ofstream write(path2.str());
+        write << "Time[s] :" << std::endl;
+        double average{};
+        for(int i{}; i<8; i++){
+            QuadTree dumir(matrix, width, height);
+            Astar astar(&dumir);
+            auto start = std::chrono::high_resolution_clock::now();
+            astar.FindPath(Point(width/30., height/30.), Point(height*29./30, width/30.));
+            astar.FindPath(Point(width/30., height*29./30), Point(height*29./30, width/30.));
+            astar.FindPath(Point(width/30., height*29./30), Point(height*29./30, height*29./30));
+            astar.FindPath(Point(width/30., height/30.), Point(height*29./30, height*29./30));
+            auto end = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double> elapsed = end - start;
+            average += elapsed.count();
+            write << elapsed.count() << std::endl;
+        }
+        write << average/10;
+        delete[] matrix;
+    }
+
+    /*
+    Astar astar(&dumir);
+    astar.FindPath(Point(20, 580), Point(580, 20));
+    */
     /*
     QuadTree dumir(matrix, width, height);
     Astar astar(&dumir);
-    astar.CreateFullMatlabPlot("instructionsB2.m", Point(20, 580), Point(580, 20));
+    astar.CreateFullMatlabPlot("instructionsB600.m", Point(20, 580), Point(580, 20));
     */
-
-    clock_t vrijeme1 = clock();
-    QuadTree dumir(matrix, width, height);
-    Astar astar(&dumir);
-    astar.FindPath(Point(20, 580), Point(580, 20));
-    clock_t vrijeme2 = clock();
-    std::cout << (vrijeme2 - vrijeme1) / (CLOCKS_PER_SEC / 1000) << " ms. " << std::endl;
-    delete[] matrix;
     return 0;
 }
 

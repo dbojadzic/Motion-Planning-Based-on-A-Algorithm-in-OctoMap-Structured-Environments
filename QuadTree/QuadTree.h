@@ -22,7 +22,7 @@ class QuadTree{
 
     double GetWidth();
     double GetHeight();
-    void InsertPoint(Point point);
+    void InsertPoint(const Point &point);
     bool IsOccupied(Point point);
     Node* FindNode(Point point);
     int CountNodes();
@@ -38,7 +38,8 @@ QuadTree::QuadTree(int matrix[], int width, int height) : topLeft(0, 0), botRigh
     root = new Node(nullptr, topLeft, botRight, 0);
     for(int i{}; i<width; i++){
         for (int j{}; j<height; j++){
-            if(!matrix[j*width + i]){
+            if(!matrix[j*height + i]){
+                //std::cout << "B: " << i << "," << j << std::endl;
                 InsertPoint(Point(i,j));
             }
         }
@@ -53,7 +54,8 @@ double QuadTree::GetHeight(){
     return botRight.y - topLeft.y;
 }
 
-void QuadTree::InsertPoint(Point point){
+void QuadTree::InsertPoint(const Point &point){
+    //std::cout << point.x << "," << point.y << std::endl;
     if(point.x < topLeft.x || point.x > botRight.x || point.y < topLeft.y || point.y > botRight.y)
         throw std::range_error("Out of bounds");
     Node* current = root;
@@ -86,6 +88,7 @@ void QuadTree::InsertPoint(Point point){
     current -> occupied = true;
     if(current -> parent)
         current -> parent -> Unite();
+    //std::cout << point.x << "," << point.y << std::endl;
 }
 
 bool QuadTree::IsOccupied(Point point){

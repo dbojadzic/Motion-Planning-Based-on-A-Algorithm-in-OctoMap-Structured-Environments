@@ -1,0 +1,43 @@
+The system is: Windows - 10.0.17134 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: D:/WinBuilds/bin/gcc.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+
+The C compiler identification is GNU, found in "C:/Users/MrTheamir/Desktop/Matrix/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/a.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: D:/WinBuilds/bin/g++.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+
+The CXX compiler identification is GNU, found in "C:/Users/MrTheamir/Desktop/Matrix/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdCXX/a.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Users/MrTheamir/Desktop/Matrix/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"D:/WinBuilds/bin/mingw32-make.exe" "cmTC_99f36/fast"
+D:/WinBuilds/bin/mingw32-make.exe -f CMakeFiles\cmTC_99f36.dir\build.make CMakeFiles/cmTC_99f36.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/MrTheamir/Desktop/Matrix/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_99f36.dir/testCCompiler.c.obj
+D:\WinBuilds\bin\gcc.exe    -o CMakeFiles\cmTC_99f36.dir\testCCompiler.c.obj   -c C:\Users\MrTheamir\Desktop\Matrix\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_99f36.exe
+"D:\Program Files\JetBrains\CLion 2018.1.5\bin\cmake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_99f36.dir\link.txt --verbose=1
+"D:\Program Files\JetBrains\CLion 2018.1.5\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_99f36.dir/objects.a
+D:\WinBuilds\bin\ar.exe cr CMakeFiles\cmTC_99f36.dir/objects.a @CMakeFiles\cmTC_99f36.dir\objects1.rsp
+D:\WinBuilds\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_99f36.dir/objects.a -Wl,--no-whole-archive  -o cmTC_99f36.exe -Wl,--out-implib,libcmTC_99f36.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_99f36.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory 'C:/Users/MrTheamir/Desktop/Matrix/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
