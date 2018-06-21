@@ -43,6 +43,7 @@ struct Node{
     void Write();
     void WriteAll();
     std::string WriteMatlab();
+    void Reset();
 };
 
 Point Node::GetCenter(){
@@ -182,6 +183,18 @@ std::string Node::WriteMatlab(){
 
 double Distance(Node* a, Node* b){
     return sqrt(pow(b -> GetCenter().x - a -> GetCenter().x, 2) + pow(b -> GetCenter().y - a -> GetCenter().y, 2));
+}
+
+void Node::Reset() {
+    fScore = std::numeric_limits<double>::infinity();
+    gScore = std::numeric_limits<double>::infinity();
+    cameFrom = nullptr;
+    if(!topLeftTree)
+        return;
+    topLeftTree -> Reset();
+    topRightTree -> Reset();
+    botLeftTree -> Reset();
+    botRightTree -> Reset();
 }
 
 #endif // NODE_H_INCLUDED

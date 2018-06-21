@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="false">
-    <generated />
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
+    <generated>
+      <config projectName="Matrix" targetName="Matrix" />
+    </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -9,7 +11,78 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d50bdfd-ae79-4aa8-ae90-51011bbb3e9f" name="Default" comment="" />
+    <list default="true" id="6d50bdfd-ae79-4aa8-ae90-51011bbb3e9f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../QuadTree/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Matrix.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Matrix.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AstarMatrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/AstarMatrix.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/Astar.h" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/Astar.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/A1000.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/A1000.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/A1500.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/A1500.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/A3000.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/A3000.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/A400.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/A400.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/A500.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/A500.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/A600.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/A600.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/B100.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/B100.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/B1000.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/B1000.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/B1500.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/B1500.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/B3000.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/B3000.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/B400.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/B400.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/B500.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/B500.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/B600.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/CreatingQuadTree/B600.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/Node.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/PathFinding/A1000.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/PathFinding/A1000.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/PathFinding/A1500.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/PathFinding/A1500.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/PathFinding/A3000.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/PathFinding/A3000.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/PathFinding/A400.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/PathFinding/A400.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/PathFinding/A500.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/PathFinding/A500.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/PathFinding/A600.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/PathFinding/A600.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/PathFinding/B1000.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/PathFinding/B1000.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/PathFinding/B1500.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/PathFinding/B1500.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/PathFinding/B3000.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/PathFinding/B3000.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/PathFinding/B400.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/PathFinding/B400.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/PathFinding/B500.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/PathFinding/B500.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/PathFinding/B600.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/PathFinding/B600.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/QuadTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/QuadTree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/main.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/Zavrsni.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/Zavrsni.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/Zavrsni.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/Zavrsni.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/izvjestaj2/A100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/izvjestaj2/A1000.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/izvjestaj2/A1500.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/izvjestaj2/A200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/izvjestaj2/A3000.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/izvjestaj2/A400.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/izvjestaj2/A500.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/izvjestaj2/A600.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/main.cpp" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +90,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor" />
@@ -26,10 +100,37 @@
       </file>
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="142" column="13" selection-start-line="142" selection-start-column="13" selection-end-line="142" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AstarMatrix.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AstarMatrix.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1360">
+              <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/AstarMatrix.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -40,25 +141,38 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="260" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Matrix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Matrix" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../QuadTree" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -72,6 +186,14 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Application.Matrix">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Matrix" RUN_TARGET_NAME="Matrix" EXPLICIT_BUILD_TARGET_NAME="all" />
+    <configuration name="Matrix" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Matrix" TARGET_NAME="Matrix" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Matrix" RUN_TARGET_NAME="Matrix" />
+    <list>
+      <item itemvalue="Application.Build All" />
+      <item itemvalue="Application.Matrix" />
+    </list>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -83,33 +205,38 @@
       <option name="presentableId" value="Default" />
       <updated>1529265566933</updated>
       <workItem from="1529265569182" duration="5000" />
+      <workItem from="1529267801608" duration="2553000" />
+      <workItem from="1529288929244" duration="258000" />
+      <workItem from="1529440794715" duration="991000" />
+      <workItem from="1529515046781" duration="598000" />
+      <workItem from="1529593481019" duration="1417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5000" />
+    <option name="totallyTimeSpent" value="5822000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="260" y="20" width="1400" height="1000" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18020834" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="CMake" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="CMake" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2678002" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32943678" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,8 +249,114 @@
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/AstarMatrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2414">
+          <caret line="142" column="13" selection-start-line="142" selection-start-column="13" selection-end-line="142" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AstarMatrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2414">
+          <caret line="142" column="13" lean-forward="true" selection-start-line="142" selection-start-column="13" selection-end-line="142" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AstarMatrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="120" column="12" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AstarMatrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" column="36" lean-forward="true" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="120" column="12" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AstarMatrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="142" column="13" selection-start-line="142" selection-start-column="13" selection-end-line="142" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

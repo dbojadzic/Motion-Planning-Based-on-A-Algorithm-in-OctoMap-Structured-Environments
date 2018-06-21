@@ -5,7 +5,6 @@
 #include "Point.h"
 
 double heuristic_cost_estimate(Point start, Point goal){
-    std::cout << "Loo";
     return sqrt(pow(goal.x - start.x, 2) + pow(goal.y - start.y, 2));
 }
 
@@ -80,7 +79,6 @@ std::vector<Point> AstarMatrix::FindPath(Point start, Point goal){
                     continue;
 
                 Point neighbor(i,j);
-                std::cout << neighbor.x << "," << neighbor.y << std::endl;
                 if(closedSet.count(neighbor))
                     continue;
                 openSet.insert(neighbor);
@@ -89,20 +87,12 @@ std::vector<Point> AstarMatrix::FindPath(Point start, Point goal){
                     gScore[current] = std::numeric_limits<double>::infinity();
                 if(!gScore.count(neighbor))
                     gScore[neighbor] = std::numeric_limits<double>::infinity();
-                std::cout << "A";
                 tentative_gScore = gScore[current] + dist_between(current, neighbor);
                 if(tentative_gScore >= gScore[neighbor])
                     continue;
-                std::cout << "B";
                 cameFrom[neighbor] = current;
                 gScore[neighbor] = tentative_gScore;
-                std::cout << "fuu" << std::endl;
-                std::cout << neighbor.x << "," << neighbor.y << std::endl;
-                std::cout << tentative_gScore << std::endl;
-                std::cout << heuristic_cost_estimate(neighbor, goal) << std::endl;
-                std::cout << fScore[neighbor] << std::endl;
                 fScore[neighbor] = tentative_gScore + heuristic_cost_estimate(neighbor, goal);
-                std::cout << "luu";
             }
         }
     }

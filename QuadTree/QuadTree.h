@@ -32,6 +32,7 @@ class QuadTree{
     void WriteAll();
     void WriteMapMatlab(std::string path);
     void StreamMapMatlab(std::stringstream &izvjestaj);
+    void Reset();
 };
 
 QuadTree::QuadTree(int matrix[], int width, int height) : topLeft(0, 0), botRight(width, height){
@@ -194,6 +195,10 @@ void QuadTree::StreamMapMatlab(std::stringstream &izvjestaj){
             }
         }
     }
+}
+
+void QuadTree::Reset() {
+    root -> Reset();
 }
 
 

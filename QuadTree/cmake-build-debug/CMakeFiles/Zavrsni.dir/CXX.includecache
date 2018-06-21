@@ -6,29 +6,29 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/MrTheamir/Desktop/Zavrsni/Astar.h
+C:/Users/MrTheamir/Desktop/Zavrsni/QuadTree/Astar.h
 set
 -
 map
 -
 Node.h
-C:/Users/MrTheamir/Desktop/Zavrsni/Node.h
+C:/Users/MrTheamir/Desktop/Zavrsni/QuadTree/Node.h
 QuadTree.h
-C:/Users/MrTheamir/Desktop/Zavrsni/QuadTree.h
+C:/Users/MrTheamir/Desktop/Zavrsni/QuadTree/QuadTree.h
 Comparator.h
-C:/Users/MrTheamir/Desktop/Zavrsni/Comparator.h
+C:/Users/MrTheamir/Desktop/Zavrsni/QuadTree/Comparator.h
 
-C:/Users/MrTheamir/Desktop/Zavrsni/Comparator.h
+C:/Users/MrTheamir/Desktop/Zavrsni/QuadTree/Comparator.h
 
-C:/Users/MrTheamir/Desktop/Zavrsni/Node.h
+C:/Users/MrTheamir/Desktop/Zavrsni/QuadTree/Node.h
 Point.h
-C:/Users/MrTheamir/Desktop/Zavrsni/Point.h
+C:/Users/MrTheamir/Desktop/Zavrsni/QuadTree/Point.h
 
-C:/Users/MrTheamir/Desktop/Zavrsni/Point.h
+C:/Users/MrTheamir/Desktop/Zavrsni/QuadTree/Point.h
 
-C:/Users/MrTheamir/Desktop/Zavrsni/QuadTree.h
+C:/Users/MrTheamir/Desktop/Zavrsni/QuadTree/QuadTree.h
 
-C:/Users/MrTheamir/Desktop/Zavrsni/main.cpp
+C:/Users/MrTheamir/Desktop/Zavrsni/QuadTree/main.cpp
 iostream
 -
 stdexcept
@@ -48,5 +48,5 @@ queue
 chrono
 -
 Astar.h
-C:/Users/MrTheamir/Desktop/Zavrsni/Astar.h
+C:/Users/MrTheamir/Desktop/Zavrsni/QuadTree/Astar.h
 

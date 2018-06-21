@@ -89,6 +89,197 @@ void setDepth(int width, int height, double tolerance){
 }
 
 int main(){
+
+    std::stringstream path2;
+    path2 << "PathFinding/report.csv";
+    /*
+    path2 << map;
+    path2 << size;
+    path2 << ".csv";
+    */
+    std::ofstream write(path2.str());
+    write << "Depth,Map,Width,Height,PointA,PointB,Time1,Time2,Time3,Time4,Time5,Time6,Time7,Time8,Time9,Time10,AvgTime,Distance,NodesVisited" << std::endl;
+
+    int sizes[] = {100, 200, 400, 500, 600, 1000, 1500, 3000};
+    char map;
+    DEPTH = 4;
+    for(int k{}; k < 4; k++) {
+        map = 'A';
+        for (int j{}; j < 2; j++) {
+            for (int size : sizes) {
+                int width = size;
+                int height = size;
+                int *matrix = new int[width * height]{};
+
+                std::stringstream path;
+                path << "maps/";
+                path << map;
+                path << size;
+                path << ".txt";
+                loadMatrix(path.str(), matrix, width, height);
+
+                Point TL(width/15., height/15.);
+                Point BL(width/15., height*14./15);
+                Point TR(width*14./15, height/15.);
+                Point BR(width*14./15, height*14./15);
+
+                QuadTree dumir(matrix, width, height);
+                Astar astar(&dumir);
+
+                //TL TR
+                write << DEPTH << "," << map << "," << width << "," << height << "," << "(" << TL.x << " " << TL.y << "),(" << TR.x << " " << TR.y << "),";
+                double average{};
+                for (int i{}; i < 10; i++) {
+                    auto start = std::chrono::high_resolution_clock::now();
+                    astar.FindPath(TL, TR);
+                    auto end = std::chrono::high_resolution_clock::now();
+                    std::chrono::duration<double> elapsed = end - start;
+                    average += elapsed.count();
+                    write << elapsed.count() << ",";
+                }
+                write << average / 10 << ",";
+                write << astar.FindDistance(TL, TR) << ",";
+                std::stringstream test1;
+                test1 << "test/D";
+                test1 << DEPTH;
+                test1 << "M";
+                test1 << map << width << "x" << height;
+                test1 << "TLTR.m";
+                write << astar.CreateFullMatlabPlotTest(test1.str(), TL, TR) << std::endl;
+                //BL TR
+                write << DEPTH << "," << map << "," << width << "," << height << "," << "(" << BL.x << " " << BL.y << "),(" << TR.x << " " << TR.y << "),";
+                average = 0;
+                for (int i{}; i < 10; i++) {
+                    auto start = std::chrono::high_resolution_clock::now();
+                    astar.FindPath(BL, TR);
+                    auto end = std::chrono::high_resolution_clock::now();
+                    std::chrono::duration<double> elapsed = end - start;
+                    average += elapsed.count();
+                    write << elapsed.count() << ",";
+                }
+                write << average / 10 << ",";
+                write << astar.FindDistance(BL, TR) << ",";
+                std::stringstream test2;
+                test2 << "test/D";
+                test2 << DEPTH;
+                test2 << "M";
+                test2 << map << width << "x" << height;
+                test2 << "BLTR.m";
+                write << astar.CreateFullMatlabPlotTest(test2.str(), BL, TR) << std::endl;
+
+                //BL BR
+                write << DEPTH << "," << map << "," << width << "," << height << "," << "(" << BL.x << " " << BL.y << "),(" << BR.x << " " << BR.y << "),";
+                average = 0;
+                for (int i{}; i < 10; i++) {
+                    auto start = std::chrono::high_resolution_clock::now();
+                    astar.FindPath(BL, BR);
+                    auto end = std::chrono::high_resolution_clock::now();
+                    std::chrono::duration<double> elapsed = end - start;
+                    average += elapsed.count();
+                    write << elapsed.count() << ",";
+                }
+                write << average / 10 << ",";
+                write << astar.FindDistance(BL, BR) << ",";
+                std::stringstream test3;
+                test3 << "test/D";
+                test3 << DEPTH;
+                test3 << "M";
+                test3 << map << width << "x" << height;
+                test3 << "BLBR.m";
+                write << astar.CreateFullMatlabPlotTest(test3.str(), BL, BR) << std::endl;
+
+                //TL BR
+                write << DEPTH << "," << map << "," << width << "," << height << "," << "(" << TL.x << " " << TL.y << "),(" << BR.x << " " << BR.y << "),";
+                average = 0;
+                for (int i{}; i < 10; i++) {
+                    auto start = std::chrono::high_resolution_clock::now();
+                    astar.FindPath(TL, BR);
+                    auto end = std::chrono::high_resolution_clock::now();
+                    std::chrono::duration<double> elapsed = end - start;
+                    average += elapsed.count();
+                    write << elapsed.count() << ",";
+                }
+                write << average / 10 << ",";
+                write << astar.FindDistance(TL, BR) << ",";
+                std::stringstream test4;
+                test4 << "test/D";
+                test4 << DEPTH;
+                test4 << "M";
+                test4 << map << width << "x" << height;
+                test4 << "TLBR.m";
+                write << astar.CreateFullMatlabPlotTest(test4.str(), TL, BR) << std::endl;
+
+                delete[] matrix;
+            }
+            map++;
+        }
+        DEPTH++;
+    }
+    return 0;
+}
+
+int mainReport(){
+
+    std::stringstream path2;
+    path2 << "CreatingQuadTree/report.csv";
+    /*
+    path2 << map;
+    path2 << size;
+    path2 << ".csv";
+    */
+    std::ofstream write(path2.str());
+    write << "Depth,Map,Width,Height,Time1,Time2,Time3,Time4,Time5,Time6,Time7,Time8,Time9,Time10,AvgTime,Nodes" << std::endl;
+
+    int sizes[] = {100, 200, 400, 500, 600, 1000, 1500, 3000};
+    char map ;
+    DEPTH = 4;
+    for(int k{}; k < 4; k++) {
+        map = 'A';
+        for (int i{}; i < 2; i++) {
+            for (int size : sizes) {
+                int width = size;
+                int height = size;
+                int *matrix = new int[width * height]{};
+
+                std::stringstream path;
+                path << "maps/";
+                path << map;
+                path << size;
+                path << ".txt";
+                loadMatrix(path.str(), matrix, width, height);
+
+                write << DEPTH << "," << map << "," << width << "," << height << ",";
+
+                double average{};
+                for (int i{}; i < 10; i++) {
+                    auto start = std::chrono::high_resolution_clock::now();
+                    QuadTree dumir(matrix, width, height);
+                    /*
+                    Astar astar(&dumir);
+                    astar.FindPath(TL, Point(height*29./30, width/30.));
+                    astar.FindPath(BL, Point(height*29./30, width/30.));
+                    astar.FindPath(BL, Point(height*29./30, height*29./30));
+                    astar.FindPath(TL, Point(height*29./30, height*29./30));
+                    */
+                    auto end = std::chrono::high_resolution_clock::now();
+                    std::chrono::duration<double> elapsed = end - start;
+                    average += elapsed.count();
+                    write << elapsed.count() << ",";
+                }
+                write << average / 10 << ",";
+                QuadTree dumir(matrix, width, height);
+                write << dumir.CountNodes() << std::endl;
+
+                delete[] matrix;
+            }
+            map++;
+        }
+        DEPTH++;
+    }
+    return 0;
+}
+
+int main2_(){
     int sizes[] = {100, 200, 400, 500, 600, 1000, 1500, 3000};
     for (int size : sizes) {
         int width = size;
@@ -97,26 +288,29 @@ int main(){
 
         std::stringstream path;
 
-        path << "maps/A";
+        path << "maps/B";
         path << size;
         path << ".txt";
         loadMatrix(path.str(), matrix, width, height);
         //loadMatrix("maps/map1-3000", matrix, width, height);
         std::stringstream path2;
-        path2 << "izvjestaj2/A";
+        path2 << "CreatingQuadTree/B";
         path2 << size;
         path2 << ".csv";
         std::ofstream write(path2.str());
         write << "Time[s] :" << std::endl;
         double average{};
-        for(int i{}; i<8; i++){
+        for(int i{}; i<10; i++){
+
+            auto start = std::chrono::high_resolution_clock::now();
             QuadTree dumir(matrix, width, height);
             Astar astar(&dumir);
-            auto start = std::chrono::high_resolution_clock::now();
-            astar.FindPath(Point(width/30., height/30.), Point(height*29./30, width/30.));
-            astar.FindPath(Point(width/30., height*29./30), Point(height*29./30, width/30.));
-            astar.FindPath(Point(width/30., height*29./30), Point(height*29./30, height*29./30));
-            astar.FindPath(Point(width/30., height/30.), Point(height*29./30, height*29./30));
+            /*
+            astar.FindPath(TL, Point(height*29./30, width/30.));
+            astar.FindPath(BL, Point(height*29./30, width/30.));
+            astar.FindPath(BL, Point(height*29./30, height*29./30));
+            astar.FindPath(TL, Point(height*29./30, height*29./30));
+            */
             auto end = std::chrono::high_resolution_clock::now();
             std::chrono::duration<double> elapsed = end - start;
             average += elapsed.count();

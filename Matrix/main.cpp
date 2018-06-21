@@ -45,17 +45,18 @@ void generateFullMatrix(int matrix[], int width, int height){
     }
 }
 
-void loadMatrix(std::string ime, int matrix[], int width, int height){
+void loadMatrix(const std::string &ime, int matrix[], int width, int height){
     std::ifstream file;
     file.open(ime);
     char a;
     int i = 0;
+    file >> a;
     while(!file.eof()){
-        file >> a;
         if(a != ' ' && a != ','){
             matrix[i] = a - '0';
             i++;
         }
+        file >> a;
     }
 }
 
@@ -91,28 +92,28 @@ void setDepth(int width, int height, double tolerance){
     }
 }
 
-int main(){
+int main_(){
 
     int sizes[] = {100, 200, 400, 500, 600, 1000, 1500, 3000};
-    for(int j = 0; j<8; j++){
-        int width = sizes[j];
-        int height = sizes[j];
+    for (int size : sizes) {
+        int width = size;
+        int height = size;
         int* matrix = new int[width*height]{};
 
         std::stringstream path;
 
         path << "maps/A";
-        path << sizes[j];
+        path << size;
         path << ".txt";
         loadMatrix(path.str(), matrix, width, height);
         std::stringstream path2;
-        path2 << "izvjestaj/A";
-        path2 << sizes[j];
+        path2 << "PathFinding/A";
+        path2 << size;
         path2 << ".csv";
         std::ofstream write(path2.str());
         write << "Time[s] :" << std::endl;
         double average{};
-        for(int i{}; i<8; i++){
+        for(int i{}; i<10; i++){
 
             AstarMatrix astar(matrix, width, height);
 
@@ -121,7 +122,6 @@ int main(){
             astar.FindPath(Point(width/30., height*29./30), Point(height*29./30, width/30.));
             astar.FindPath(Point(width/30., height*29./30), Point(height*29./30, height*29./30));
             astar.FindPath(Point(width/30., height/30.), Point(height*29./30, height*29./30));
-
             auto end = std::chrono::high_resolution_clock::now();
             std::chrono::duration<double> elapsed = end - start;
             average += elapsed.count();
@@ -143,19 +143,18 @@ int main(){
     return 0;
 }
 
-/*
+
 int main(){
-    int width = 600;
-    int height = 600;
+    int width = 1500;
+    int height = 1500;
     int* matrix = new int[width*height]{};
-    loadMatrix("B1.txt", matrix, width, height);
-    QuadTree dumir(matrix, width, height);
-    AstarMatrix astar(matrix, width, height);
-    astar.CreateFullMatlabPlot("instructionsBold.m", Point(20, 200), Point(580, 480));
+    loadMatrix("maps/B1500.txt", matrix, width, height);
+    AstarMatrix dumir(matrix, width, height);
+    dumir.CreateFullMatlabPlot("instructions1500.m", Point(width/30., height/30.), Point(height*29./30, width/30.));
     delete[] matrix;
     return 0;
 }
-*/
+
 /*
 int main(){
     int width = 3000;
@@ -380,7 +379,7 @@ int main(){
 }
 */
 /*
-int main() //main za generisanje izvještaja i poreðenje matrica
+int main() //main za generisanje izvjeï¿½taja i poreï¿½enje matrica
 {
     srand(time(NULL));
     std::ofstream izvjestaj("izvjestajehlimanayes.txt");
