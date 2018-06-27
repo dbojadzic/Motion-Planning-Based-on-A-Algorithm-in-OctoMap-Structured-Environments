@@ -1,0 +1,3 @@
+C:/Users/MrTheamir/Desktop/Zavrsni/Rosettacode/cmake-build-debug/CMakeFiles/Rosettacode.dir
+C:/Users/MrTheamir/Desktop/Zavrsni/Rosettacode/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/MrTheamir/Desktop/Zavrsni/Rosettacode/cmake-build-debug/CMakeFiles/rebuild_cache.dir

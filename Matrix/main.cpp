@@ -31,9 +31,8 @@ void generateMatrix(int matrix[], int width, int height){
     for(int i{}; i<occupied; i++){
         int x = SlucajniBroj(0, width-1);
         int y = SlucajniBroj(0, height-1);
-        //std::cout << x << " " << y << std::endl;
-        if(!matrix[y*width + x])
-            matrix[y*width + x] = 1;
+        if(matrix[y*width + x])
+            matrix[y*width + x] = 0;
         else
             i--;
     }
@@ -64,7 +63,7 @@ void generateTxt(std::string ime, int matrix[], int width, int height){
     std::ofstream izlaz(ime);
     for(int i{}; i<width; i++){
         for(int j{}; j<height; j++)
-            izlaz << matrix[j*width + i];
+            izlaz << matrix[j * width + i] << ",";
         izlaz << std::endl;
     }
 }
@@ -116,10 +115,12 @@ int main_(){
         for(int i{}; i<10; i++){
 
             AstarMatrix astar(matrix, width, height);
+            std::vector<Point> d;
 
             auto start = std::chrono::high_resolution_clock::now();
-            astar.FindPath(Point(width/30., height/30.), Point(height*29./30, width/30.));
-            astar.FindPath(Point(width/30., height*29./30), Point(height*29./30, width/30.));
+            d=astar.FindPath(Point(width/15., height/15.), Point(height*14./15, width/15.));
+            std::cout << d.size();
+            astar.FindPath(Point(width/15., height*14./15), Point(height*14./15, width/15.));
             astar.FindPath(Point(width/30., height*29./30), Point(height*29./30, height*29./30));
             astar.FindPath(Point(width/30., height/30.), Point(height*29./30, height*29./30));
             auto end = std::chrono::high_resolution_clock::now();
@@ -143,14 +144,150 @@ int main_(){
     return 0;
 }
 
-
 int main(){
-    int width = 1500;
-    int height = 1500;
+
+    std::stringstream path2;
+    path2 << "PathFinding/report.csv";
+    /*
+    path2 << map;
+    path2 << size;
+    path2 << ".csv";
+    */
+    std::ofstream write(path2.str());
+    write << "Map,Width,Height,PointA,PointB,Time1,Time2,Time3,Time4,Time5,Time6,Time7,Time8,Time9,Time10,AvgTime,Distance" << std::endl;
+
+    int sizes[] = {100, 200, 400, 500, 600, 1000, 1500, 3000};
+    char map;
+            for (int size : sizes) {
+                map = 'A';
+                for (int j{}; j < 2; j++) {
+                int width = size;
+                int height = size;
+                int *matrix = new int[width * height]{};
+
+                std::stringstream path;
+                path << "maps/";
+                path << map;
+                path << size;
+                path << ".txt";
+                loadMatrix(path.str(), matrix, width, height);
+
+                Point TL(width / 15., height / 15.);
+                Point BL(width / 15., height * 14. / 15);
+                Point TR(width * 14. / 15, height / 15.);
+                Point BR(width * 14. / 15, height * 14. / 15);
+
+                AstarMatrix astar(matrix, width, height);
+
+                std::vector<Point> pathpoints;
+
+                //TL TR
+                write << map << "," << width << "," << height << "," << "(" << TL.x << " " << TL.y
+                      << "),(" << TR.x << " " << TR.y << "),";
+                double average{};
+
+                for (int i{}; i < 10; i++) {
+                    auto start = std::chrono::high_resolution_clock::now();
+                    pathpoints = astar.FindPath(TL, TR);
+                    auto end = std::chrono::high_resolution_clock::now();
+                    std::chrono::duration<double> elapsed = end - start;
+                    average += elapsed.count();
+                    write << elapsed.count() << ",";
+                }
+                write << average / 10 << ",";
+                write << astar.FindDistance(pathpoints, TL, TR) << std::endl;
+                std::stringstream test1;
+                test1 << "test/D";
+                test1 << "M";
+                test1 << map << width << "x" << height;
+                test1 << "TLTR.m";
+                astar.CreateFullMatlabPlot(test1.str(), TL, TR);
+                //BL TR
+                write << map << "," << width << "," << height << "," << "(" << BL.x << " " << BL.y
+                      << "),(" << TR.x << " " << TR.y << "),";
+                average = 0;
+                for (int i{}; i < 10; i++) {
+                    auto start = std::chrono::high_resolution_clock::now();
+                    pathpoints = astar.FindPath(BL, TR);
+                    auto end = std::chrono::high_resolution_clock::now();
+                    std::chrono::duration<double> elapsed = end - start;
+                    average += elapsed.count();
+                    write << elapsed.count() << ",";
+                }
+                write << average / 10 << ",";
+                write << astar.FindDistance(pathpoints, BL, TR) << std::endl;
+                std::stringstream test2;
+                test2 << "test/D";
+                test2 << "M";
+                test2 << map << width << "x" << height;
+                test2 << "BLTR.m";
+                astar.CreateFullMatlabPlot(test2.str(), BL, TR);
+
+                //BL BR
+                write << map << "," << width << "," << height << "," << "(" << BL.x << " " << BL.y
+                      << "),(" << BR.x << " " << BR.y << "),";
+                average = 0;
+                for (int i{}; i < 10; i++) {
+                    auto start = std::chrono::high_resolution_clock::now();
+                    pathpoints = astar.FindPath(BL, BR);
+                    auto end = std::chrono::high_resolution_clock::now();
+                    std::chrono::duration<double> elapsed = end - start;
+                    average += elapsed.count();
+                    write << elapsed.count() << ",";
+                }
+                write << average / 10 << ",";
+                write << astar.FindDistance(pathpoints, BL, BR) << std::endl;
+                std::stringstream test3;
+                test3 << "test/D";
+                test3 << "M";
+                test3 << map << width << "x" << height;
+                test3 << "BLBR.m";
+                astar.CreateFullMatlabPlot(test3.str(), BL, BR);
+
+                //TL BR
+                write << map << "," << width << "," << height << "," << "(" << TL.x << " " << TL.y
+                      << "),(" << BR.x << " " << BR.y << "),";
+                average = 0;
+                for (int i{}; i < 10; i++) {
+                    auto start = std::chrono::high_resolution_clock::now();
+                    pathpoints = astar.FindPath(TL, BR);
+                    auto end = std::chrono::high_resolution_clock::now();
+                    std::chrono::duration<double> elapsed = end - start;
+                    average += elapsed.count();
+                    write << elapsed.count() << ",";
+                }
+                write << average / 10 << ",";
+                write << astar.FindDistance(pathpoints, TL, BR) << std::endl;
+                std::stringstream test4;
+                test4 << "test/D";
+                test4 << "M";
+                test4 << map << width << "x" << height;
+                test4 << "TLBR.m";
+                astar.CreateFullMatlabPlot(test4.str(), TL, BR);
+
+                delete[] matrix;
+
+                map++;
+            }
+        }
+    return 0;
+}
+
+int main2_(){
+    int width = 1000;
+    int height = 1000;
     int* matrix = new int[width*height]{};
-    loadMatrix("maps/B1500.txt", matrix, width, height);
+    //loadMatrix("maps/B1500.txt", matrix, width, height);
+    generateFullMatrix(matrix, width, height);
+    generateMatrix(matrix, width, height);
     AstarMatrix dumir(matrix, width, height);
-    dumir.CreateFullMatlabPlot("instructions1500.m", Point(width/30., height/30.), Point(height*29./30, width/30.));
+    auto start = std::chrono::high_resolution_clock::now();
+    dumir.FindPath(Point(0, 0), Point(999, 999));
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    dumir.CreateFullMatlabPlot("Kemalinstr.m",Point(0, 0), Point(999, 999));
+    generateTxt("Kemal.txt", matrix, width, height);
+    std::cout << elapsed.count();
     delete[] matrix;
     return 0;
 }

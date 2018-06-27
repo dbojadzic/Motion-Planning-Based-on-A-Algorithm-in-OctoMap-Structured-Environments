@@ -8,11 +8,11 @@
 #include "QuadTree.h"
 #include "Comparator.h"
 
-double heuristic_cost_estimate(Node* start, Node* goal){
+double heuristic_cost_estimate(const Node* start, const Node* goal){
     return Distance(start, goal);
 }
 
-double dist_between(Node* start, Node* goal){
+double dist_between(const Node* start, const Node* goal){
     return Distance(start, goal);
 }
 
@@ -25,17 +25,6 @@ std::vector<Node*> reconstruct_path(Node* current){
     }
     return total_path;
 }
-
-/*
-std::vector<Node*> reconstruct_path(std::map<Node*, Node*, Comparator> cameFrom, Node* current){
-    std::vector<Node*> total_path{current};
-    while(cameFrom.count(current)){
-        current = cameFrom[current];
-        total_path.push_back(current);
-    }
-    return total_path;
-}
-*/
 
 class Astar{
 private:
@@ -67,7 +56,6 @@ std::vector<Node*> Astar::FindPath(Point s, Point f){
     openSet.insert(start);
     start -> gScore = 0;
     start -> fScore = heuristic_cost_estimate(start, goal);
-    int m = 0;
     while(!openSet.empty()){
         Node* current{*openSet.begin()};
         if(current == goal)

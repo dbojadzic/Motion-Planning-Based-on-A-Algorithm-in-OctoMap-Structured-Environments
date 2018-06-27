@@ -35,19 +35,19 @@ struct Node{
             return 1;
     }
 
-    Point GetCenter();
+    Point GetCenter() const ;
     void Unite();
-    bool Overlap(const Point &_topLeft, const Point &_botRight);
+    bool Overlap(const Point &_topLeft, const Point &_botRight) const;
     void FindBordering(std::vector<Node*> &neighbors, const Point &_topLeft, const Point &_botRight);
     void FindBorderingNoOccupied(std::vector<Node*> &neighbors, const Point &_topLeft, const Point &_botRight);
-    void Write();
-    void WriteAll();
-    std::string WriteMatlab();
+    void Write() const;
+    void WriteAll() const;
+    std::string WriteMatlab() const;
     void Reset();
 };
 
-Point Node::GetCenter(){
-    return Point((topLeft.x + botRight.x)/2, (topLeft.y + botRight.y)/2);
+Point Node::GetCenter() const {
+    return {(topLeft.x + botRight.x)/2, (topLeft.y + botRight.y)/2};
 }
 
 void Node::Unite(){
@@ -66,7 +66,7 @@ void Node::Unite(){
     }
 }
 
-bool Node::Overlap(const Point &_topLeft, const Point &_botRight){
+bool Node::Overlap(const Point &_topLeft, const Point &_botRight) const {
     Point topLeftCopy{topLeft};
     Point botRightCopy{botRight};
     return (topLeftCopy.x <= _topLeft.x
@@ -146,7 +146,7 @@ void Node::FindBorderingNoOccupied(std::vector<Node*> &neighbors, const Point &_
     }
 }
 
-void Node::Write(){
+void Node::Write() const {
         std::cout << " (" << topLeft.x << "," << topLeft.y << "),(" << botRight.x << "," << botRight.y << ")" << " fScore: " << fScore << ", gScore: " << gScore;
         if(cameFrom)
             std::cout << ", Came From: " << "(" << cameFrom -> topLeft.x << "," << cameFrom -> topLeft.y << "),(" << cameFrom -> botRight.x << "," << cameFrom -> botRight.y << ")";
@@ -154,7 +154,7 @@ void Node::Write(){
             std::cout << ", Came From Nothing";
 }
 
-void Node::WriteAll(){
+void Node::WriteAll() const {
     if(!topLeftTree){
         Write();
     }
@@ -166,7 +166,7 @@ void Node::WriteAll(){
     }
 }
 
-std::string Node::WriteMatlab(){
+std::string Node::WriteMatlab() const {
     double x = topLeft.x;
     double y = -botRight.y;
     double width = botRight.x - x;
@@ -181,7 +181,7 @@ std::string Node::WriteMatlab(){
     return help.str();
 }
 
-double Distance(Node* a, Node* b){
+double Distance(const Node* a, const Node* b) {
     return sqrt(pow(b -> GetCenter().x - a -> GetCenter().x, 2) + pow(b -> GetCenter().y - a -> GetCenter().y, 2));
 }
 
