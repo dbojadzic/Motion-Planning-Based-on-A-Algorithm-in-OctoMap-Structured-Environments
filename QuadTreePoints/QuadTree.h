@@ -14,7 +14,17 @@ class QuadTree{
         root = new Node(nullptr, topLeft, botRight, 0);
     }
 
-    QuadTree(int matrix[], int width, int height);
+    QuadTree(const int matrix[], int width, int height, int points = 0) : topLeft(0, 0), botRight(width, height){
+        root = new Node(nullptr, topLeft, botRight, 0);
+        root -> borderPoints = points;
+        for(int i{}; i<width; i++){
+            for (int j{}; j<height; j++){
+                if(!matrix[j*height + i]){
+                    InsertPoint(Point(i,j));
+                }
+            }
+        }
+    }
 
     ~QuadTree(){
         delete root;
@@ -35,17 +45,7 @@ class QuadTree{
     void Reset();
 };
 
-QuadTree::QuadTree(int matrix[], int width, int height) : topLeft(0, 0), botRight(width, height){
-    root = new Node(nullptr, topLeft, botRight, 0);
-    for(int i{}; i<width; i++){
-        for (int j{}; j<height; j++){
-            if(!matrix[j*height + i]){
-                //std::cout << "B: " << i << "," << j << std::endl;
-                InsertPoint(Point(i,j));
-            }
-        }
-    }
-}
+
 
 double QuadTree::GetWidth() const {
     return botRight.x - topLeft.x;

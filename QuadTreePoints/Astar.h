@@ -25,14 +25,23 @@ double point_distance(const Point &a, const Point &b, const Point &c){
 }
 
 std::vector<Point> reconstruct_path(Node* current){
-    std::vector<Point> total_path{current->BestPoint};
+    std::vector<Point> total_path{current->AccessPoint};
     while(current -> cameFrom){
         current = current -> cameFrom;
-        total_path.push_back(current->BestPoint);
+        total_path.push_back(current->AccessPoint);
     }
     return total_path;
 }
-
+/*
+std::vector<Point> reconstruct_path(Node* current){
+    std::vector<Point> total_path{current->GetCenter()};
+    while(current -> cameFrom){
+        current = current -> cameFrom;
+        total_path.push_back(current->GetCenter());
+    }
+    return total_path;
+}
+*/
 /*
 std::vector<Point> reconstruct_path(Node* current){
     std::vector<Point> total_path{current->BestPoint, current->AccessPoint};
@@ -72,50 +81,42 @@ std::vector<Point> Astar::FindPath(Point s, Point f){
     Node* start{quadtree -> FindNode(s)};
     Node* goal{quadtree -> FindNode(f)};
     start -> AccessPoint = s;
-    std::vector<Point> points = start -> GetBorderPoints();
-    start -> BestPoint = *std::min_element(points.begin(), points.end(), [f](const Point a, const Point b){
-        return point_distance(a,f) < point_distance(b,f);
-    });
-
     start -> gScore = 0;
-    start -> fScore = point_distance(start -> BestPoint, f);
+    start -> fScore = point_distance(start -> AccessPoint, f);
     openSet.insert(start);
-
     while(!openSet.empty()){
         Node* current{*openSet.begin()};
-        //BORDER
-
-        if(current->cameFrom){
-            std::vector<Point> border = current -> GetBorder();
-            current -> AccessPoint = *std::min_element(border.begin(), border.end(), [current](const Point &a, const Point &b){
-                return point_distance(current->cameFrom->BestPoint, a, current->BestPoint) < point_distance(current->cameFrom->BestPoint, b, current->BestPoint);
-            });
-        }
         if(current == goal) {
-            current -> BestPoint = f;
+            //current -> BestPoint = f;
             return reconstruct_path(current);
         }
         openSet.erase(openSet.begin());
         closedSet.insert(current);
         std::vector<Node*> neighbors{quadtree -> FindAdjacentNoOccupied(current)};
-
         for(Node* neighbor : neighbors){
             if(closedSet.count(neighbor)){
                 continue;
             }
-            points = neighbor -> GetBorderPoints();
+
+            std::vector<Point> points = neighbor -> GetBorderPoints();
             neighbor -> BestPoint = *std::min_element(points.begin(), points.end(), [current, f](const Point &a, const Point &b){
-                return point_distance(current->BestPoint, a) + point_distance(a, f) < point_distance(current->BestPoint, b) + point_distance(b, f);
+                return point_distance(current->AccessPoint, a, f) < point_distance(current->AccessPoint, b, f);
             });
 
-            double tentative_gScore{current -> gScore + point_distance(current->BestPoint, neighbor->BestPoint)};
+            points = current -> GetBorder(neighbor);
+            neighbor -> PossibleAccessPoint = *std::min_element(points.begin(), points.end(), [current, neighbor](const Point &a, const Point &b){
+                return point_distance(current->AccessPoint, a, neighbor->BestPoint)  <  point_distance(current->AccessPoint, b, neighbor->BestPoint);
+            });
+
+            double tentative_gScore{current -> gScore + point_distance(current->AccessPoint, neighbor->PossibleAccessPoint)};
             if(tentative_gScore >= neighbor -> gScore) {
                 openSet.insert(neighbor);
                 continue;
             }
             neighbor -> cameFrom = current;
+            neighbor -> AccessPoint = neighbor -> PossibleAccessPoint;
             neighbor -> gScore = tentative_gScore;
-            neighbor -> fScore = tentative_gScore + point_distance(neighbor->BestPoint, f);
+            neighbor -> fScore = tentative_gScore + point_distance(neighbor->AccessPoint, f);
             openSet.insert(neighbor);
         }
     }
@@ -132,26 +133,13 @@ std::vector<Point> Astar::FindPath(Point s, Point f, int &nodes){
     Node* start{quadtree -> FindNode(s)};
     Node* goal{quadtree -> FindNode(f)};
     start -> AccessPoint = s;
-    std::vector<Point> points = start -> GetBorderPoints();
-    start -> BestPoint = *std::min_element(points.begin(), points.end(), [f](const Point &a, const Point &b){
-        return point_distance(a,f) < point_distance(b,f);
-    });
     start -> gScore = 0;
-    start -> fScore = point_distance(start -> BestPoint, f);
+    start -> fScore = point_distance(start -> AccessPoint, f);
     openSet.insert(start);
-
     while(!openSet.empty()){
         Node* current{*openSet.begin()};
-
-        //BORDER
-        if(current->cameFrom){
-            std::vector<Point> border = current -> GetBorder();
-            current -> AccessPoint = *std::min_element(border.begin(), border.end(), [current](const Point &a, const Point &b){
-                return point_distance(current->cameFrom->BestPoint, a, current->BestPoint) < point_distance(current->cameFrom->BestPoint, b, current->BestPoint);
-            });
-        }
         if(current == goal) {
-            current -> BestPoint = f;
+            //current -> BestPoint = f;
             nodes = openSet.size() + closedSet.size();
             return reconstruct_path(current);
         }
@@ -162,19 +150,26 @@ std::vector<Point> Astar::FindPath(Point s, Point f, int &nodes){
             if(closedSet.count(neighbor)){
                 continue;
             }
-            points = neighbor -> GetBorderPoints();
+
+            std::vector<Point> points = neighbor -> GetBorderPoints();
             neighbor -> BestPoint = *std::min_element(points.begin(), points.end(), [current, f](const Point &a, const Point &b){
-                return point_distance(current->BestPoint, a) + point_distance(a, f) < point_distance(current->BestPoint, b) + point_distance(b, f);
+                return point_distance(current->AccessPoint, a, f) < point_distance(current->AccessPoint, b, f);
             });
 
-            double tentative_gScore{current -> gScore + point_distance(current->BestPoint, neighbor->BestPoint)};
+            points = current -> GetBorder(neighbor);
+            neighbor -> PossibleAccessPoint = *std::min_element(points.begin(), points.end(), [current, neighbor](const Point &a, const Point &b){
+                return point_distance(current->AccessPoint, a, neighbor->BestPoint)  <  point_distance(current->AccessPoint, b, neighbor->BestPoint);
+            });
+
+            double tentative_gScore{current -> gScore + point_distance(current->AccessPoint, neighbor->PossibleAccessPoint)};
             if(tentative_gScore >= neighbor -> gScore) {
                 openSet.insert(neighbor);
                 continue;
             }
             neighbor -> cameFrom = current;
+            neighbor -> AccessPoint = neighbor -> PossibleAccessPoint;
             neighbor -> gScore = tentative_gScore;
-            neighbor -> fScore = tentative_gScore + point_distance(neighbor->BestPoint, f);
+            neighbor -> fScore = tentative_gScore + point_distance(neighbor->AccessPoint, f);
             openSet.insert(neighbor);
         }
     }
@@ -206,6 +201,7 @@ void Astar::CreateFullMatlabPlot(const std::string &path, Point start, Point fin
     instructions << "];" << std::endl;
     instructions << "hold on;" << std::endl;
     instructions << "plot(X,Y,'r');" << std::endl;
+    instructions << "plot(X,Y,'bo');" << std::endl;
     instructions << "legend('" << FindDistance(points, start, finish) << "','Location','southoutside');" << std::endl;
     std::ofstream write(path);
     write << instructions.str();
@@ -237,6 +233,7 @@ int Astar::CreateFullMatlabPlotTest(const std::string &path, Point start, Point 
     instructions << "];" << std::endl;
     instructions << "hold on;" << std::endl;
     instructions << "plot(X,Y,'r');" << std::endl;
+    instructions << "plot(X,Y,'bo');" << std::endl;
     instructions << "legend('" << FindDistance(points, start, finish) << "','Location','southoutside');" << std::endl;
     std::ofstream write(path);
     write << instructions.str();

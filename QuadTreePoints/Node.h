@@ -3,6 +3,7 @@
 
 #include "Point.h"
 
+
 struct Node{
     Point topLeft;
     Point botRight;
@@ -19,11 +20,12 @@ struct Node{
     double gScore = std::numeric_limits<double>::infinity();
     Node* cameFrom = nullptr;
 
-    int borderPoints = 0;
+    static int borderPoints;
     Point AccessPoint;
+    Point PossibleAccessPoint;
     Point BestPoint;
 
-    Node(Node* parent, Point topLeft, Point botRight, int depth,  int points = 0, bool occupied = false) : parent(parent), topLeft(topLeft), botRight(botRight), occupied(occupied), depth(depth), borderPoints(points){}
+    Node(Node* parent, Point topLeft, Point botRight, int depth, bool occupied = false) : parent(parent), topLeft(topLeft), botRight(botRight), occupied(occupied), depth(depth){}
 
     ~Node(){
         delete topLeftTree;
@@ -49,8 +51,9 @@ struct Node{
     std::string WriteMatlab() const;
     void Reset();
     std::vector<Point> GetBorderPoints() const;
-    std::vector<Point> GetBorder() const;
+    std::vector<Point> GetBorder(Node* n) const;
 };
+int Node::borderPoints;
 
 Point Node::GetCenter() const {
     return {(topLeft.x + botRight.x)/2, (topLeft.y + botRight.y)/2};
@@ -206,55 +209,105 @@ std::vector<Point> Node::GetBorderPoints() const {
     constx1 = topLeft.x;
     consty1 = topLeft.y;
     consty2 = botRight.y;
-    delta = (topLeft.x - botRight.x)/(borderPoints+1);
-    for(int i{}; i<borderPoints+2; i++){
+    delta = (botRight.x - topLeft.x)/(borderPoints+1);
+    for(int i{}; i<Node::borderPoints+2; i++){
         p.emplace_back(constx1 + i*delta, consty1);
         p.emplace_back(constx1 + i*delta, consty2);
     }
     constx2 = botRight.x;
-    delta = (botRight.y - topLeft.y)/(borderPoints+1);
-    for(int i{}; i<borderPoints+2; i++){
+    delta = (botRight.y - topLeft.y)/(Node::borderPoints+1);
+    for(int i{}; i<Node::borderPoints+2; i++){
         p.emplace_back(constx1, consty1 + i*delta);
         p.emplace_back(constx2, consty1 + i*delta);
     }
     return p;
 }
 
-std::vector<Point> Node::GetBorder() const {
+std::vector<Point> Node::GetBorder(Node* n) const {
     std::vector<Point> b;
     double constv1, constv2;
     long double delta;
-    if(botRight.x == cameFrom -> topLeft.x){
-        constv1 = topLeft.x;
-        constv2 = topLeft.y < botRight.y ? topLeft.y : botRight.y;
-        delta = (fabs(topLeft.x - botRight.x))/(borderPoints+1);
-        for(int i{}; i<borderPoints+2; i++){
-            b.emplace_back(constv1, constv2 + i*delta);
+    if(botRight.x == n -> topLeft.x){
+        if(botRight.y == n -> topLeft.y) // 4
+            return {Point(botRight.x, botRight.y)};
+        else if(topLeft.y == n -> botRight.y) // 2
+            return {Point(botRight.x, topLeft.y)};
+
+        else if(botRight.y - topLeft.y <= n -> botRight.y - n -> topLeft.y){
+            constv1 = botRight.x;
+            constv2 = topLeft.y;
+            delta = (botRight.y - topLeft.y)/(borderPoints+1);
+            for(int i{}; i<borderPoints+2; i++){
+                b.emplace_back(constv1, constv2 + i*delta);
+            }
+        }
+        else {
+            constv1 = n -> topLeft.x;
+            constv2 = n -> topLeft.y;
+            delta = (n -> botRight.y - n -> topLeft.y)/(borderPoints+1);
+            for(int i{}; i<borderPoints+2; i++){
+                b.emplace_back(constv1, constv2 + i*delta);
+            }
         }
     }
-    else if (topLeft.x == cameFrom -> botRight.x){
-        constv1 = topLeft.x;
-        constv2 = topLeft.y < botRight.y ? topLeft.y : botRight.y;
-        delta = (fabs(topLeft.x - botRight.x))/(borderPoints+1);
-        for(int i{}; i<borderPoints+2; i++){
-            b.emplace_back(constv1, constv2 + i*delta);
+    else if (topLeft.x == n -> botRight.x){
+        if(botRight.y == n -> topLeft.y) // 3
+            return {Point(topLeft.x, botRight.y)};
+        else if(topLeft.y == n -> botRight.y) // 1
+            return {Point(topLeft.x, topLeft.y)};
+
+        if(botRight.y - topLeft.y <= n -> botRight.y - n -> topLeft.y){
+            constv1 = topLeft.x;
+            constv2 = topLeft.y;
+            delta = (botRight.y - topLeft.y)/(borderPoints+1);
+            for(int i{}; i<borderPoints+2; i++){
+                b.emplace_back(constv1, constv2 + i*delta);
+            }
+        }
+        else {
+            constv1 = n -> botRight.x;
+            constv2 = n -> topLeft.y;
+            delta = (n -> botRight.y - n -> topLeft.y)/(borderPoints+1);
+            for(int i{}; i<borderPoints+2; i++){
+                b.emplace_back(constv1, constv2 + i*delta);
+            }
         }
     }
-    else if (topLeft.y == cameFrom -> botRight.y){
-        constv1 = topLeft.y;
-        constv2 = topLeft.x < botRight.x ? topLeft.x : botRight.x;
-        delta = (fabs(topLeft.y - botRight.y))/(borderPoints+1);
-        for(int i{}; i<borderPoints+2; i++){
-            b.emplace_back(constv1 + i*delta, constv2);
-        }
-    }
-    else if ( botRight.y == cameFrom -> topLeft.y){
-            constv1 = topLeft.y;
-            constv2 = topLeft.x < botRight.x ? topLeft.x : botRight.x;
-            delta = (fabs(topLeft.y - botRight.y))/(borderPoints+1);
+    else if (topLeft.y == n -> botRight.y){
+        if(botRight.x - topLeft.x <= n -> botRight.x - n -> topLeft.x){
+            constv1 = topLeft.x;
+            constv2 = topLeft.y;
+            delta = (botRight.x - topLeft.x)/(borderPoints+1);
             for(int i{}; i<borderPoints+2; i++){
                 b.emplace_back(constv1 + i*delta, constv2);
             }
+        }
+        else {
+            constv1 = n -> topLeft.x;
+            constv2 = n -> botRight.y;
+            delta = (n -> botRight.x - n -> topLeft.x)/(borderPoints+1);
+            for(int i{}; i<borderPoints+2; i++){
+                b.emplace_back(constv1 + i*delta, constv2);
+            }
+        }
+    }
+    else if (botRight.y == n -> topLeft.y){
+        if(botRight.x - topLeft.x <= n -> botRight.x - n -> topLeft.x){
+            constv1 = topLeft.x;
+            constv2 = botRight.y;
+            delta = (botRight.x - topLeft.x)/(borderPoints+1);
+            for(int i{}; i<borderPoints+2; i++){
+                b.emplace_back(constv1 + i*delta, constv2);
+            }
+        }
+        else {
+            constv1 = n -> topLeft.x;
+            constv2 = n -> topLeft.y;
+            delta = (n -> botRight.x - n -> topLeft.x)/(borderPoints+1);
+            for(int i{}; i<borderPoints+2; i++){
+                b.emplace_back(constv1 + i*delta, constv2);
+            }
+        }
     }
     else {
         throw "Fatal error, no border";
