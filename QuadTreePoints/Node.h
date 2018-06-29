@@ -23,7 +23,9 @@ struct Node{
     static int borderPoints;
     Point AccessPoint;
     Point PossibleAccessPoint;
+    Point PossibleBestPoint;
     Point BestPoint;
+    double goaldist = 0;
 
     Node(Node* parent, Point topLeft, Point botRight, int depth, bool occupied = false) : parent(parent), topLeft(topLeft), botRight(botRight), occupied(occupied), depth(depth){}
 

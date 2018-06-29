@@ -200,4 +200,4 @@ Y=[-1400,-1312.5,-1275,-1218.75,-1125,-937.5,-937.5,-918.75,-843.75,-750,-656.25
 hold on;
 plot(X,Y,'r');
 plot(X,Y,'bo');
-legend('5406','Location','southoutside');
+legend('1976.53','Location','southoutside');

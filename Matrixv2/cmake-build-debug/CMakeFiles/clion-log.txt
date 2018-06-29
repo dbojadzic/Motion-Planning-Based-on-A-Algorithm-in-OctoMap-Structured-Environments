@@ -1,4 +1,0 @@
-"D:\Program Files\JetBrains\CLion 2018.1.5\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\MrTheamir\Desktop\Zavrsni\Matrixv2
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/MrTheamir/Desktop/Zavrsni/Matrixv2/cmake-build-debug

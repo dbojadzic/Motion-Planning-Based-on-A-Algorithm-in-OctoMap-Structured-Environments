@@ -1,3 +1,0 @@
-"D:\Program Files\JetBrains\CLion 2018.1.5\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\Matrixv2.dir/objects.a
-D:\WinBuilds\bin\ar.exe cr CMakeFiles\Matrixv2.dir/objects.a @CMakeFiles\Matrixv2.dir\objects1.rsp
-D:\WinBuilds\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Matrixv2.dir/objects.a -Wl,--no-whole-archive  -o Matrixv2.exe -Wl,--out-implib,libMatrixv2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Matrixv2.dir\linklibs.rsp

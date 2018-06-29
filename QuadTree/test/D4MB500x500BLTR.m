@@ -1,5 +1,5 @@
 axis([0 500 -500 0]);
-title('QuadTree: 500 x 500 From: (33.3333,466.667) To: (466.667,33.3333)');
+title('QuadTree: 500 x 500 From: (33,466) To: (466,33)');
 xlabel('Width: 500');
 ylabel('Height: 500');
 rectangle('Position',[125 -125 125 125], 'FaceColor',[0 0 0]);
@@ -183,8 +183,8 @@ rectangle('Position',[437.5 -468.75 31.25 31.25], 'FaceColor',[1 1 1]);
 rectangle('Position',[468.75 -468.75 31.25 31.25], 'FaceColor',[0 0 0]);
 rectangle('Position',[437.5 -500 31.25 31.25], 'FaceColor',[0 0 0]);
 rectangle('Position',[468.75 -500 31.25 31.25], 'FaceColor',[0 0 0]);
-X=[466.667,33.3333];
-Y=[-33.3333,-466.667];
+X=[466,33];
+Y=[-33,-466];
 hold on;
 plot(X,Y,'r');
 legend('0','Location','southoutside');

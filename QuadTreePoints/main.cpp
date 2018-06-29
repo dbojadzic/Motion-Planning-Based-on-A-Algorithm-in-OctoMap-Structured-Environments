@@ -88,19 +88,19 @@ void setDepth(int width, int height, double tolerance){
     }
 }
 
-/*
-int main(){
+
+int main____(){
     int width = 3000;
     int height = 3000;
     int* matrix = new int[width*height]{};
     loadMatrix("maps/A3000.txt", matrix, width, height);
     QuadTree dumir(matrix, width, height, 5);
     Astar astar(&dumir);
-    astar.CreateFullMatlabPlot("instructions.m", Point(2200, 500), Point(2100, 1700));
+    astar.CreateFullMatlabPlot("instructions.m", Point(300, 300), Point(300, 2800));
     delete[] matrix;
     return 0;
 }
-*/
+
 int main(){
 
     std::stringstream path2;
@@ -131,10 +131,10 @@ int main(){
                 path << ".txt";
                 loadMatrix(path.str(), matrix, width, height);
 
-                Point TL(width/15., height/15.);
-                Point BL(width/15., height*14./15);
-                Point TR(width*14./15, height/15.);
-                Point BR(width*14./15, height*14./15);
+                Point TL(width/15, height/15);
+                Point BL(width/15, height*14/15);
+                Point TR(width*14/15, height/15);
+                Point BR(width*14/15, height*14/15);
 
                 QuadTree dumir(matrix, width, height, 4);
                 Astar astar(&dumir);

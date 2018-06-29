@@ -1,5 +1,5 @@
 axis([0 200 -200 0]);
-title('QuadTree: 200 x 200 From: (13.3333,186.667) To: (186.667,13.3333)');
+title('QuadTree: 200 x 200 From: (13,186) To: (186,13)');
 xlabel('Width: 200');
 ylabel('Height: 200');
 rectangle('Position',[50 -50 50 50], 'FaceColor',[0 0 0]);
@@ -192,8 +192,8 @@ rectangle('Position',[175 -187.5 12.5 12.5], 'FaceColor',[1 1 1]);
 rectangle('Position',[187.5 -187.5 12.5 12.5], 'FaceColor',[0 0 0]);
 rectangle('Position',[175 -200 12.5 12.5], 'FaceColor',[0 0 0]);
 rectangle('Position',[187.5 -200 12.5 12.5], 'FaceColor',[0 0 0]);
-X=[186.667,13.3333];
-Y=[-13.3333,-186.667];
+X=[186,13];
+Y=[-13,-186];
 hold on;
 plot(X,Y,'r');
 plot(X,Y,'bo');

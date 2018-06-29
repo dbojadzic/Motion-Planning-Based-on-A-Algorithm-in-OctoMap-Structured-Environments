@@ -63,8 +63,8 @@ public:
 
     Astar(QuadTree* quadtree) : quadtree(quadtree){}
 
-    std::vector<Point> FindPath(Point start, Point finish);
-    std::vector<Point> FindPath(Point start, Point finish, int &nodes);
+    std::vector<Point> FindPath(Point s, Point f);
+    std::vector<Point> FindPath(Point s, Point f, int &nodes);
     double FindDistance(Point start, Point finish);
     double FindDistance(std::vector<Point> nodes, Point start, Point finish) const ;
     void CreateFullMatlabPlot(const std::string &path, Point start, Point finish);
@@ -99,13 +99,23 @@ std::vector<Point> Astar::FindPath(Point s, Point f){
             }
 
             std::vector<Point> points = neighbor -> GetBorderPoints();
-            neighbor -> BestPoint = *std::min_element(points.begin(), points.end(), [current, f](const Point &a, const Point &b){
-                return point_distance(current->AccessPoint, a, f) < point_distance(current->AccessPoint, b, f);
+            std::vector<Point> borders = current -> GetBorder(neighbor);
+
+            neighbor -> PossibleBestPoint = *std::min_element(points.begin(), points.end(), [current, f, borders](const Point &a, const Point &b){
+                /*
+                Point helpA = *std::min_element(borders.begin(), borders.end(), [current, a](const Point &c, const Point &d){
+                    return point_distance(current->AccessPoint, c, a)  <  point_distance(current->AccessPoint, d, a);
+                });
+                Point helpB = *std::min_element(borders.begin(), borders.end(), [current, b](const Point &c, const Point &d){
+                    return point_distance(current->AccessPoint, c, b)  <  point_distance(current->AccessPoint, d, b);
+                });
+                return point_distance(current->AccessPoint, helpA) + point_distance(helpA, a) + point_distance(a, f) < point_distance(current->AccessPoint, helpB) + point_distance(helpB, b) + point_distance(b, f);
+                */
+                return point_distance(current->AccessPoint, a) + point_distance(a, f) < point_distance(current->AccessPoint, b) + point_distance(b, f);
             });
 
-            points = current -> GetBorder(neighbor);
-            neighbor -> PossibleAccessPoint = *std::min_element(points.begin(), points.end(), [current, neighbor](const Point &a, const Point &b){
-                return point_distance(current->AccessPoint, a, neighbor->BestPoint)  <  point_distance(current->AccessPoint, b, neighbor->BestPoint);
+            neighbor -> PossibleAccessPoint = *std::min_element(borders.begin(), borders.end(), [current, neighbor](const Point &a, const Point &b){
+                return point_distance(current->AccessPoint, a, neighbor->PossibleBestPoint)  <  point_distance(current->AccessPoint, b, neighbor->PossibleBestPoint);
             });
 
             double tentative_gScore{current -> gScore + point_distance(current->AccessPoint, neighbor->PossibleAccessPoint)};
@@ -115,6 +125,7 @@ std::vector<Point> Astar::FindPath(Point s, Point f){
             }
             neighbor -> cameFrom = current;
             neighbor -> AccessPoint = neighbor -> PossibleAccessPoint;
+            neighbor -> BestPoint = neighbor -> PossibleBestPoint;
             neighbor -> gScore = tentative_gScore;
             neighbor -> fScore = tentative_gScore + point_distance(neighbor->AccessPoint, f);
             openSet.insert(neighbor);
@@ -125,6 +136,7 @@ std::vector<Point> Astar::FindPath(Point s, Point f){
 
 std::vector<Point> Astar::FindPath(Point s, Point f, int &nodes){
     if(quadtree -> IsOccupied(s) || quadtree -> IsOccupied(f)){
+        nodes = -1;
         return {};
     }
     quadtree -> Reset();
@@ -152,13 +164,23 @@ std::vector<Point> Astar::FindPath(Point s, Point f, int &nodes){
             }
 
             std::vector<Point> points = neighbor -> GetBorderPoints();
-            neighbor -> BestPoint = *std::min_element(points.begin(), points.end(), [current, f](const Point &a, const Point &b){
-                return point_distance(current->AccessPoint, a, f) < point_distance(current->AccessPoint, b, f);
+            std::vector<Point> borders = current -> GetBorder(neighbor);
+
+            neighbor -> PossibleBestPoint = *std::min_element(points.begin(), points.end(), [current, f, borders](const Point &a, const Point &b){
+                /*
+                Point helpA = *std::min_element(borders.begin(), borders.end(), [current, a](const Point &c, const Point &d){
+                    return point_distance(current->AccessPoint, c, a)  <  point_distance(current->AccessPoint, d, a);
+                });
+                Point helpB = *std::min_element(borders.begin(), borders.end(), [current, b](const Point &c, const Point &d){
+                    return point_distance(current->AccessPoint, c, b)  <  point_distance(current->AccessPoint, d, b);
+                });
+                return point_distance(current->AccessPoint, helpA) + point_distance(helpA, a) + point_distance(a, f) < point_distance(current->AccessPoint, helpB) + point_distance(helpB, b) + point_distance(b, f);
+                */
+                return point_distance(current->AccessPoint, a) + point_distance(a, f) < point_distance(current->AccessPoint, b) + point_distance(b, f);
             });
 
-            points = current -> GetBorder(neighbor);
-            neighbor -> PossibleAccessPoint = *std::min_element(points.begin(), points.end(), [current, neighbor](const Point &a, const Point &b){
-                return point_distance(current->AccessPoint, a, neighbor->BestPoint)  <  point_distance(current->AccessPoint, b, neighbor->BestPoint);
+            neighbor -> PossibleAccessPoint = *std::min_element(borders.begin(), borders.end(), [current, neighbor](const Point &a, const Point &b){
+                return point_distance(current->AccessPoint, a, neighbor->PossibleBestPoint)  <  point_distance(current->AccessPoint, b, neighbor->PossibleBestPoint);
             });
 
             double tentative_gScore{current -> gScore + point_distance(current->AccessPoint, neighbor->PossibleAccessPoint)};
@@ -168,6 +190,7 @@ std::vector<Point> Astar::FindPath(Point s, Point f, int &nodes){
             }
             neighbor -> cameFrom = current;
             neighbor -> AccessPoint = neighbor -> PossibleAccessPoint;
+            neighbor -> BestPoint = neighbor -> PossibleBestPoint;
             neighbor -> gScore = tentative_gScore;
             neighbor -> fScore = tentative_gScore + point_distance(neighbor->AccessPoint, f);
             openSet.insert(neighbor);
@@ -241,16 +264,8 @@ int Astar::CreateFullMatlabPlotTest(const std::string &path, Point start, Point 
 }
 
 double Astar::FindDistance(Point start, Point goal){
-    double distance{};
     std::vector<Point> nodes{FindPath(start, goal)};
-    if(!nodes.size())
-        return -1;
-    for(int i{}; i<nodes.size()-1; i++){
-        distance += sqrt(pow(nodes[i+1].x - nodes[i].x, 2) + pow(nodes[i+1].y  - nodes[i].y, 2));
-    }
-    distance += sqrt(pow(nodes[0].x - start.x, 2) + pow(nodes[0].y  - start.y, 2));
-    distance += sqrt(pow(nodes[nodes.size()-1].x - goal.x, 2) + pow(nodes[nodes.size()-1].y  - goal.y, 2));
-    return distance;
+    return FindDistance(nodes, start, goal);
 }
 
 double Astar::FindDistance(std::vector<Point> nodes, Point start, Point goal) const {
@@ -260,8 +275,8 @@ double Astar::FindDistance(std::vector<Point> nodes, Point start, Point goal) co
     for(int i{}; i<nodes.size()-1; i++){
         distance += sqrt(pow(nodes[i+1].x - nodes[i].x, 2) + pow(nodes[i+1].y  - nodes[i].y, 2));
     }
-    distance += sqrt(pow(nodes[0].x - start.x, 2) + pow(nodes[0].y  - start.y, 2));
-    distance += sqrt(pow(nodes[nodes.size()-1].x - goal.x, 2) + pow(nodes[nodes.size()-1].y  - goal.y, 2));
+    distance += sqrt(pow(nodes[0].x - goal.x, 2) + pow(nodes[0].y  - goal.y, 2));
+    distance += sqrt(pow(nodes[nodes.size()-1].x - start.x, 2) + pow(nodes[nodes.size()-1].y  - start.y, 2));
     return distance;
 }
 

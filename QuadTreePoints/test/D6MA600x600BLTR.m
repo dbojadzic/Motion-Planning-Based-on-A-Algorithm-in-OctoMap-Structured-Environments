@@ -587,4 +587,4 @@ Y=[-40,-75,-112.5,-150,-225,-262.5,-281.25,-300,-318.75,-318.75,-318.75,-318.75,
 hold on;
 plot(X,Y,'r');
 plot(X,Y,'bo');
-legend('2358.04','Location','southoutside');
+legend('957.832','Location','southoutside');

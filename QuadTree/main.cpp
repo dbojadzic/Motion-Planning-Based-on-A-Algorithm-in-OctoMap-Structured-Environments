@@ -118,10 +118,10 @@ int main(){
                 path << ".txt";
                 loadMatrix(path.str(), matrix, width, height);
 
-                Point TL(width/15., height/15.);
-                Point BL(width/15., height*14./15);
-                Point TR(width*14./15, height/15.);
-                Point BR(width*14./15, height*14./15);
+                Point TL(width/15, height/15);
+                Point BL(width/15, height*14/15);
+                Point TR(width*14/15, height/15);
+                Point BR(width*14/15, height*14/15);
 
                 QuadTree dumir(matrix, width, height);
                 Astar astar(&dumir);

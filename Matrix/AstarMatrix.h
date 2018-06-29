@@ -34,7 +34,6 @@ public:
     AstarMatrix(int* matrix, int width, int height) : matrix(matrix), width(width), height(height) {}
 
     std::vector<Point> FindPath(Point start, Point finish) const ;
-    double FindDistance(Point start, Point finish);
     double FindDistance(std::vector<Point> nodes, Point start, Point finish) const;
     void CreateFullMatlabPlot(std::string path, Point start, Point finish) const;
 
@@ -202,8 +201,8 @@ double AstarMatrix::FindDistance(std::vector<Point> nodes, Point start, Point go
     for(int i{}; i<nodes.size()-1; i++){
         distance += sqrt(pow(nodes[i+1].x - nodes[i].x, 2) + pow(nodes[i+1].y  - nodes[i].y, 2));
     }
-    distance += sqrt(pow(nodes[0].x - start.x, 2) + pow(nodes[0].y  - start.y, 2));
-    distance += sqrt(pow(nodes[nodes.size()-1].x - goal.x, 2) + pow(nodes[nodes.size()-1].y  - goal.y, 2));
+    distance += sqrt(pow(nodes[0].x - goal.x, 2) + pow(nodes[0].y  - goal.y, 2));
+    distance += sqrt(pow(nodes[nodes.size()-1].x - start.x, 2) + pow(nodes[nodes.size()-1].y  - start.y, 2));
     return distance;
 }
 

@@ -1,5 +1,5 @@
 axis([0 1000 -1000 0]);
-title('QuadTree: 1000 x 1000 From: (66.6667,933.333) To: (933.333,933.333)');
+title('QuadTree: 1000 x 1000 From: (66,933) To: (933,933)');
 xlabel('Width: 1000');
 ylabel('Height: 1000');
 rectangle('Position',[250 -250 250 250], 'FaceColor',[0 0 0]);
@@ -183,8 +183,8 @@ rectangle('Position',[875 -937.5 62.5 62.5], 'FaceColor',[1 1 1]);
 rectangle('Position',[937.5 -937.5 62.5 62.5], 'FaceColor',[0 0 0]);
 rectangle('Position',[875 -1000 62.5 62.5], 'FaceColor',[0 0 0]);
 rectangle('Position',[937.5 -1000 62.5 62.5], 'FaceColor',[0 0 0]);
-X=[933.333,66.6667];
-Y=[-933.333,-933.333];
+X=[933,66];
+Y=[-933,-933];
 hold on;
 plot(X,Y,'r');
 plot(X,Y,'bo');

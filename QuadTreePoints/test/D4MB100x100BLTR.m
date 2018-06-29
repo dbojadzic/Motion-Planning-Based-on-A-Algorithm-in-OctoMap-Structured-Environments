@@ -1,5 +1,5 @@
 axis([0 100 -100 0]);
-title('QuadTree: 100 x 100 From: (6.66667,93.3333) To: (93.3333,6.66667)');
+title('QuadTree: 100 x 100 From: (6,93) To: (93,6)');
 xlabel('Width: 100');
 ylabel('Height: 100');
 rectangle('Position',[25 -12.5 12.5 12.5], 'FaceColor',[0 0 0]);
@@ -213,8 +213,8 @@ rectangle('Position',[87.5 -93.75 6.25 6.25], 'FaceColor',[1 1 1]);
 rectangle('Position',[93.75 -93.75 6.25 6.25], 'FaceColor',[0 0 0]);
 rectangle('Position',[87.5 -100 6.25 6.25], 'FaceColor',[0 0 0]);
 rectangle('Position',[93.75 -100 6.25 6.25], 'FaceColor',[0 0 0]);
-X=[93.3333,6.66667];
-Y=[-6.66667,-93.3333];
+X=[93,6];
+Y=[-6,-93];
 hold on;
 plot(X,Y,'r');
 plot(X,Y,'bo');

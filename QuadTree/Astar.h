@@ -3,6 +3,10 @@
 
 #include <set>
 #include <map>
+#include <vector>
+#include <cmath>
+#include <fstream>
+#include <sstream>
 
 #include "Node.h"
 #include "QuadTree.h"
@@ -182,16 +186,8 @@ int Astar::CreateFullMatlabPlotTest(const std::string &path, Point start, Point 
 }
 
 double Astar::FindDistance(Point start, Point finish){
-    double distance{};
     std::vector<Node*> nodes{FindPath(start, finish)};
-    if(!nodes.size())
-        return 0;
-    for(int i{}; i<nodes.size()-1; i++){
-        distance += Distance(nodes[i], nodes[i+1]);
-    }
-    distance += sqrt(pow(nodes[0] -> GetCenter().x - start.x, 2) + pow(nodes[0] -> GetCenter().y - start.y, 2));
-    distance += sqrt(pow(nodes[nodes.size()-1] -> GetCenter().x - finish.x, 2) + pow(nodes[nodes.size()-1] -> GetCenter().y - finish.y, 2));
-    return distance;
+    return FindDistance(nodes, start, finish);
 }
 
 double Astar::FindDistance(std::vector<Node*> nodes, Point start, Point finish){
@@ -202,9 +198,8 @@ double Astar::FindDistance(std::vector<Node*> nodes, Point start, Point finish){
         distance += Distance(nodes[i], nodes[i+1]);
 
     }
-    distance += sqrt(pow(nodes[0] -> GetCenter().x - start.x, 2) + pow(nodes[0] -> GetCenter().y - start.y, 2));
-    distance += sqrt(pow(nodes[nodes.size()-1] -> GetCenter().x - finish.x, 2) + pow(nodes[nodes.size()-1] -> GetCenter().y - finish.y, 2));
-
+    distance += sqrt(pow(nodes[0] -> GetCenter().x - finish.x, 2) + pow(nodes[0] -> GetCenter().y - finish.y, 2));
+    distance += sqrt(pow(nodes[nodes.size()-1] -> GetCenter().x - start.x, 2) + pow(nodes[nodes.size()-1] -> GetCenter().y - start.y, 2));
     return distance;
 }
 
