@@ -96,7 +96,7 @@ int main____(){
     loadMatrix("maps/A3000.txt", matrix, width, height);
     QuadTree dumir(matrix, width, height, 5);
     Astar astar(&dumir);
-    astar.CreateFullMatlabPlot("instructions.m", Point(300, 300), Point(300, 2800));
+    std::vector<Point> tacke = astar.FindPath(Point(300, 300), Point(300, 2800));
     delete[] matrix;
     return 0;
 }

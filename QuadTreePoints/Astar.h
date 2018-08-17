@@ -102,15 +102,6 @@ std::vector<Point> Astar::FindPath(Point s, Point f){
             std::vector<Point> borders = current -> GetBorder(neighbor);
 
             neighbor -> PossibleBestPoint = *std::min_element(points.begin(), points.end(), [current, f, borders](const Point &a, const Point &b){
-                /*
-                Point helpA = *std::min_element(borders.begin(), borders.end(), [current, a](const Point &c, const Point &d){
-                    return point_distance(current->AccessPoint, c, a)  <  point_distance(current->AccessPoint, d, a);
-                });
-                Point helpB = *std::min_element(borders.begin(), borders.end(), [current, b](const Point &c, const Point &d){
-                    return point_distance(current->AccessPoint, c, b)  <  point_distance(current->AccessPoint, d, b);
-                });
-                return point_distance(current->AccessPoint, helpA) + point_distance(helpA, a) + point_distance(a, f) < point_distance(current->AccessPoint, helpB) + point_distance(helpB, b) + point_distance(b, f);
-                */
                 return point_distance(current->AccessPoint, a) + point_distance(a, f) < point_distance(current->AccessPoint, b) + point_distance(b, f);
             });
 

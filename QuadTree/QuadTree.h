@@ -27,7 +27,6 @@ class QuadTree{
     Node* FindNode(Point point);
     int CountNodes();
     std::vector<Node*> FindAdjacent(Node* node);
-    std::vector<Node*> Astar(Node* start, Node* finish);
     std::vector<Node*> FindAdjacentNoOccupied(Node* node);
     void WriteAll();
     void WriteMapMatlab(std::string path);

@@ -13,563 +13,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6d50bdfd-ae79-4aa8-ae90-51011bbb3e9f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AstarMatrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/AstarMatrix.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PathFinding/report.csv" beforeDir="false" afterPath="$PROJECT_DIR$/PathFinding/report.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Matrix.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Matrix.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Matrix.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Matrix.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Matrix.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Matrix.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMA600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMA600x600TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DMB600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/DMB600x600TLTR.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../QuadTree/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/Astar.h" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/Astar.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/PathFinding/report.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/PathFinding/report.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/CMakeFiles/Zavrsni.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/Zavrsni.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/cmake-build-debug/Zavrsni.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA1500x1500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA1500x1500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA1500x1500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA1500x1500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA1500x1500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA1500x1500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA1500x1500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA1500x1500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA3000x3000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA3000x3000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA3000x3000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA3000x3000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA3000x3000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA3000x3000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA3000x3000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA3000x3000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MA600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MA600x600TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D4MB500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D4MB500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA1500x1500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA1500x1500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA1500x1500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA1500x1500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA1500x1500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA1500x1500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA1500x1500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA1500x1500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA3000x3000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA3000x3000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA3000x3000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA3000x3000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA3000x3000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA3000x3000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA3000x3000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA3000x3000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MA600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MA600x600TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB1500x1500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB1500x1500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB1500x1500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB1500x1500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB1500x1500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB1500x1500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB1500x1500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB1500x1500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB3000x3000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB3000x3000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB3000x3000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB3000x3000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB3000x3000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB3000x3000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB3000x3000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB3000x3000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D5MB600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D5MB600x600TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA1500x1500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA1500x1500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA1500x1500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA1500x1500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA1500x1500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA1500x1500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA1500x1500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA1500x1500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA3000x3000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA3000x3000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA3000x3000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA3000x3000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA3000x3000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA3000x3000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA3000x3000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA3000x3000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MA600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MA600x600TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB1500x1500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB1500x1500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB1500x1500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB1500x1500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB1500x1500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB1500x1500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB1500x1500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB1500x1500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB3000x3000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB3000x3000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB3000x3000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB3000x3000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB3000x3000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB3000x3000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB3000x3000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB3000x3000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D6MB600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D6MB600x600TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA1500x1500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA1500x1500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA1500x1500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA1500x1500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA1500x1500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA1500x1500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA1500x1500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA1500x1500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA3000x3000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA3000x3000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA3000x3000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA3000x3000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA3000x3000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA3000x3000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA3000x3000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA3000x3000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MA600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MA600x600TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB1500x1500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB1500x1500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB1500x1500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB1500x1500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB1500x1500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB1500x1500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB1500x1500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB1500x1500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB3000x3000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB3000x3000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB3000x3000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB3000x3000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB3000x3000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB3000x3000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB3000x3000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB3000x3000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTree/test/D7MB600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/test/D7MB600x600TLTR.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/Point.h" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/Point.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuadTree/QuadTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTree/QuadTree.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../QuadTreePoints/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../QuadTreePoints/Astar.h" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/Astar.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/Comparator.h" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/Comparator.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/Node.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/PathFinding/report.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/PathFinding/report.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/cmake-build-debug/CMakeFiles/Zavrsni.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/cmake-build-debug/CMakeFiles/Zavrsni.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/cmake-build-debug/CMakeFiles/Zavrsni.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/cmake-build-debug/CMakeFiles/Zavrsni.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/cmake-build-debug/Zavrsni.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/cmake-build-debug/Zavrsni.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/instructions.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/instructions.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../QuadTreePoints/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1500x1500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1500x1500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1500x1500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1500x1500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1500x1500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1500x1500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1500x1500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA1500x1500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA3000x3000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA3000x3000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA3000x3000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA3000x3000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA3000x3000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA3000x3000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA3000x3000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA3000x3000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MA600x600TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D4MB500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1500x1500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1500x1500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1500x1500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1500x1500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1500x1500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1500x1500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1500x1500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA1500x1500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA3000x3000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA3000x3000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA3000x3000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA3000x3000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA3000x3000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA3000x3000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA3000x3000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA3000x3000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MA600x600TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1500x1500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1500x1500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1500x1500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1500x1500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1500x1500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1500x1500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1500x1500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB1500x1500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB3000x3000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB3000x3000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB3000x3000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB3000x3000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB3000x3000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB3000x3000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB3000x3000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB3000x3000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D5MB600x600TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1500x1500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1500x1500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1500x1500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1500x1500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1500x1500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1500x1500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1500x1500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA1500x1500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA3000x3000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA3000x3000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA3000x3000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA3000x3000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA3000x3000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA3000x3000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA3000x3000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA3000x3000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MA600x600TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1500x1500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1500x1500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1500x1500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1500x1500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1500x1500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1500x1500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1500x1500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB1500x1500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB3000x3000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB3000x3000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB3000x3000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB3000x3000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB3000x3000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB3000x3000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB3000x3000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB3000x3000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D6MB600x600TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1500x1500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1500x1500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1500x1500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1500x1500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1500x1500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1500x1500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1500x1500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA1500x1500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA3000x3000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA3000x3000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA3000x3000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA3000x3000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA3000x3000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA3000x3000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA3000x3000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA3000x3000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MA600x600TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1000x1000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1000x1000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1000x1000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1000x1000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1000x1000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1000x1000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1000x1000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1000x1000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB100x100BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB100x100BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB100x100BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB100x100BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB100x100TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB100x100TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB100x100TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB100x100TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1500x1500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1500x1500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1500x1500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1500x1500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1500x1500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1500x1500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1500x1500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB1500x1500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB200x200BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB200x200BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB200x200BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB200x200BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB200x200TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB200x200TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB200x200TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB200x200TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB3000x3000BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB3000x3000BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB3000x3000BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB3000x3000BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB3000x3000TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB3000x3000TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB3000x3000TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB3000x3000TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB400x400BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB400x400BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB400x400BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB400x400BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB400x400TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB400x400TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB400x400TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB400x400TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB500x500BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB500x500BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB500x500BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB500x500BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB500x500TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB500x500TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB500x500TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB500x500TLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB600x600BLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB600x600BLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB600x600BLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB600x600BLTR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB600x600TLBR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB600x600TLBR.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB600x600TLTR.m" beforeDir="false" afterPath="$PROJECT_DIR$/../QuadTreePoints/test/D7MB600x600TLTR.m" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -590,7 +39,7 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
+            <state relative-caret-position="17">
               <caret line="190" column="40" selection-start-line="190" selection-start-column="40" selection-end-line="190" selection-end-column="40" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
@@ -599,10 +48,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Comparator.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Comparator.h">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file leaf-file-name="AstarMatrix.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AstarMatrix.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
+            <state relative-caret-position="595">
               <caret line="35" column="66" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
               <folding>
                 <element signature="e#63#77#0" expanded="true" />
@@ -676,7 +130,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../QuadTree" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -722,24 +176,29 @@
       <workItem from="1529980780187" duration="841000" />
       <workItem from="1530026816375" duration="10283000" />
       <workItem from="1530113278749" duration="614000" />
-      <workItem from="1530237919768" duration="2430000" />
+      <workItem from="1530237919768" duration="3020000" />
+      <workItem from="1530563234192" duration="2739000" />
+      <workItem from="1530744354510" duration="630000" />
+      <workItem from="1530897401806" duration="600000" />
+      <workItem from="1530966278972" duration="600000" />
+      <workItem from="1531051618717" duration="600000" />
+      <workItem from="1532098742393" duration="241000" />
+      <workItem from="1532099045009" duration="145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25722000" />
+    <option name="totallyTimeSpent" value="31867000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1203125" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1203125" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32943678" />
       <window_info anchor="bottom" id="CMake" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2678002" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2678002" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -748,6 +207,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32943678" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -760,6 +220,79 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3230">
+          <caret line="190" column="40" selection-start-line="190" selection-start-column="40" selection-end-line="190" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3230">
+          <caret line="190" column="40" selection-start-line="190" selection-start-column="40" selection-end-line="190" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Comparator.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AstarMatrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="66" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
+          <folding>
+            <element signature="e#63#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Point.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AstarMatrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="66" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
+          <folding>
+            <element signature="e#63#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Point.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3230">
+          <caret line="190" column="40" selection-start-line="190" selection-start-column="40" selection-end-line="190" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1018,6 +551,9 @@
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Comparator.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Point.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1027,7 +563,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AstarMatrix.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
+        <state relative-caret-position="595">
           <caret line="35" column="66" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
           <folding>
             <element signature="e#63#77#0" expanded="true" />
@@ -1037,7 +573,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
+        <state relative-caret-position="17">
           <caret line="190" column="40" selection-start-line="190" selection-start-column="40" selection-end-line="190" selection-end-column="40" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
