@@ -1,4 +1,4 @@
-#Motion Planning Based on A* Algorithm in OctoMap
+# Motion Planning Based on A* Algorithm in OctoMap
 Structured Environments
 
 The graduation thesis "Motion Planning Based on A* Algorithm in OctoMap
