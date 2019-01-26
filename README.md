@@ -1,5 +1,4 @@
-# Motion Planning Based on A* Algorithm in OctoMap
-Structured Environments
+# Motion Planning Based on A* Algorithm in OctoMap Structured Environments
 
 The graduation thesis "Motion Planning Based on A* Algorithm in OctoMap
 Structured Environments" deals with the processing and presentation of the results
