@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Zavrsni.dir/main.cpp.o  -o Zavrsni 
